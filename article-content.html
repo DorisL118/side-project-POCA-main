@@ -18,8 +18,8 @@
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./index.css">
 
-    <script src="../js/jquery-1.11.3.min.js"></script>
-    <script src="../js/jquery.jcarousellite.min.js"></script>
+    <script src="./js/jquery-1.11.3.min.js"></script>
+    <script src="./js/jquery.jcarousellite.min.js"></script>
 </head>
 
 <body>
@@ -54,25 +54,25 @@
                         <div className="nav-map"><a href="https://dorisl118.github.io/side-project-POCA/page/contact.html"><p>聯繫我們 &nbsp; | &nbsp; Contact us &nbsp; ❯</p></a></div>
                         <hr />
                         <div className="nav-home" onClick={handleHomeClick}><p>返回 &nbsp; | &nbsp; Return &nbsp; ❯</p></div>
-                        <div className="return" onClick={handleHomeClick}><img src="../icon/@1x/menu-return.svg" alt="" /></div>
+                        <div className="return" onClick={handleHomeClick}><img src="./icon/@1x/menu-return.svg" alt="" /></div>
                     </div>
 
                     <div className="article-container">
                         <div className="row row-cols-2 mt-3">
                             <div className="row-col-2" >
                                 <a href="https://dorisl118.github.io/side-project-POCA/page/index.html">
-                                    <img src="../logo/@1x/Header-LOGO.svg" alt="#" />
+                                    <img src="./logo/@1x/Header-LOGO.svg" alt="#" />
                                 </a>
                             </div>
                             <div className="row-col-2" >
                                 <ul className="nav justify-content-end">
                                     <div className="nav-item-1-1">
                                         <a href="https://dorisl118.github.io/side-project-POCA/page/checkout.html">
-                                            <img src="../icon/@1x/ShoppingCart.svg" alt="" />
+                                            <img src="./icon/@1x/ShoppingCart.svg" alt="" />
                                         </a>
                                     </div>
                                     <li className="nav-item-2" onClick={handleClick}>
-                                        <img src="../icon/@1x/menu.svg" className="nav-link-more" href="#"></img>
+                                        <img src="./icon/@1x/menu.svg" className="nav-link-more" href="#"></img>
                                     </li>
                                 </ul>
                             </div>
@@ -86,9 +86,9 @@
             {
                 id: 1,
                 title: "歐德咖啡館 Old Coffee",
-                button1: { src: "../icon/@1x/Plug.svg", text: "有插座" },
-                button2: { src: "../icon/@1x/Wifi.svg", text: "有Wifi" },
-                button3: { src: "../icon/@1x/Pet.svg", text: "寵物友善" },
+                button1: { src: "./icon/@1x/Plug.svg", text: "有插座" },
+                button2: { src: "./icon/@1x/Wifi.svg", text: "有Wifi" },
+                button3: { src: "./icon/@1x/Pet.svg", text: "寵物友善" },
                 address: "台北市中正區濟南路一段321號",
                 phone: "02-2397-5400",
                 time: "09:00–17:30（週二休）"
@@ -127,11 +127,11 @@
                                         <p>{button3.text}</p>
                                     </button>}
                             </div>
-                            <div><img src="../icon/@1x/Place.svg" alt="地址" style={{ margin: '40px 8px 0 0' }} />{address}</div>
-                            <div><img src="../icon/@1x/Phone.svg" alt="電話" style={{ margin: '10px 8px 0 0' }} />{phone}</div>
-                            <div><img src="../icon/@1x/Time.svg" alt="營業時間" style={{ margin: '10px 8px 0 0' }} />{time}</div>
-                            <img src="../img/@1x/wave-article-v0427.svg" alt="" style={{ marginTop: '60px', width: "26vw" }} />
-                            <iframe className="content-map" src="../map/map.html" frameBorder="0" style={{ marginTop: '20px' }}></iframe>
+                            <div><img src="./icon/@1x/Place.svg" alt="地址" style={{ margin: '40px 8px 0 0' }} />{address}</div>
+                            <div><img src="./icon/@1x/Phone.svg" alt="電話" style={{ margin: '10px 8px 0 0' }} />{phone}</div>
+                            <div><img src="./icon/@1x/Time.svg" alt="營業時間" style={{ margin: '10px 8px 0 0' }} />{time}</div>
+                            <img src="./img/@1x/wave-article-v0427.svg" alt="" style={{ marginTop: '60px', width: "26vw" }} />
+                            <iframe className="content-map" src="./map/map.html" frameBorder="0" style={{ marginTop: '20px' }}></iframe>
                         </div>
                     ))}
                 </>
@@ -146,13 +146,13 @@
                                 <div className="title"><p>{title}</p></div>
                                 <hr />
                                 <div className="text"><p>{text1.split('\n').map((line, index) => <>{line}<br key={index} /></>)}</p></div>
-                                <div><img src="../img/@1x/articleImg02.png" alt="咖啡廳照片" /></div>
+                                <div><img src="./img/@1x/articleImg02.png" alt="咖啡廳照片" /></div>
                                 <div className="text"><p>{text2.split('\n').map((line, index) => <>{line}<br key={index} /></>)}</p></div>
                                 <div>
                                     <div className="title"><p>菜單</p></div>
                                     <hr />
                                     <div className="ps"><p>僅供參考請依現場提供之內容為準</p></div>
-                                    <div><img src="../img/@1x/menu.png" alt="菜單" /></div>
+                                    <div><img src="./img/@1x/menu.png" alt="菜單" /></div>
                                 </div>
                             </div>
                         ))}
@@ -173,7 +173,7 @@
 
                 <section className="article-content-text">
                     <section className="content-title-all">
-                        <div className="content-title-img"><img src="../img/@1x/articleTop.png" alt="首圖" /></div>
+                        <div className="content-title-img"><img src="./img/@1x/articleTop.png" alt="首圖" /></div>
                         <div className="content-title-1">
                             <ContentTitle></ContentTitle>
                         </div>

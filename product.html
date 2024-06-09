@@ -20,8 +20,8 @@
     <script src="./product.js"></script>
 
 
-    <script src="../js/jquery-1.11.3.min.js"></script>
-    <script src="../js/jquery.jcarousellite.min.js"></script>
+    <script src="./js/jquery-1.11.3.min.js"></script>
+    <script src="./js/jquery.jcarousellite.min.js"></script>
 </head>
 <style>
     .nav-item-1-1 {
@@ -72,14 +72,14 @@
                         <div className="nav-map"><a href="https://dorisl118.github.io/side-project-POCA/page/contact.html"><p>聯繫我們 &nbsp; | &nbsp; Contact us &nbsp; ❯</p></a></div>
                         <hr />
                         <div className="nav-home" onClick={handleHomeClick}><p>返回 &nbsp; | &nbsp; Return &nbsp; ❯</p></div>
-                        <div className="return" onClick={handleHomeClick}><img src="../icon/@1x/menu-return.svg" alt="" /></div>
+                        <div className="return" onClick={handleHomeClick}><img src="./icon/@1x/menu-return.svg" alt="" /></div>
                     </div>
 
                     <div className="article-container">
                         <div className="row row-cols-2 mt-3">
                             <div className="row-col-2" >
                                 <a href="https://dorisl118.github.io/side-project-POCA/page/index.html">
-                                    <img src="../logo/@1x/Header-LOGO.svg" alt="#" />
+                                    <img src="./logo/@1x/Header-LOGO.svg" alt="#" />
                                 </a>
                             </div>
                             <div className="row-col-2" >
@@ -87,13 +87,13 @@
                                     <li className="nav-item">
                                         <div className="nav-item-1-1" id="cartIcon">
                                             <a href="https://dorisl118.github.io/side-project-POCA/page/checkout.html">
-                                                <img src="../icon/@1x/ShoppingCart.svg" alt="" />
+                                                <img src="./icon/@1x/ShoppingCart.svg" alt="" />
                                             </a>
                                         </div>
                                         <div className="nav-item-1-2">{cartQuantity}</div>
                                     </li>
                                     <li className="nav-item" onClick={handleClick}>
-                                        <img src="../icon/@1x/menu.svg" className="nav-link-more" href="#"></img>
+                                        <img src="./icon/@1x/menu.svg" className="nav-link-more" href="#"></img>
                                     </li>
                                 </ul>
                             </div>
@@ -132,7 +132,7 @@
                     <input type="text" id="quantity" value={quantity} readOnly />
                     <button className="counter-btn" onClick={increaseQuantity}>＋</button>
                     <button className="counter-btn" onClick={decreaseQuantity}>－</button>
-                    <div type="submit" onClick={submitCart}><img src="../icon/@1x/ShoppingCart-btn.svg" alt="" /></div>
+                    <div type="submit" onClick={submitCart}><img src="./icon/@1x/ShoppingCart-btn.svg" alt="" /></div>
                 </div>
             )
         }
@@ -176,7 +176,7 @@
             const products = [
                 {
                     id: 1,
-                    img: "../img/@1x/product-M.png",
+                    img: "./img/@1x/product-M.png",
                     title: "台灣咖啡豆",
                     button1: { text: "#巴西" },
                     button2: { text: "#水洗" },
@@ -186,7 +186,7 @@
                 },
                 {
                     id: 2,
-                    img: "../img/@1x/product-M-2.png",
+                    img: "./img/@1x/product-M-2.png",
                     title: "羅布斯塔咖啡豆",
                     button1: { text: "#巴西" },
                     button2: { text: "#水洗" },
@@ -196,7 +196,7 @@
                 },
                 {
                     id: 3,
-                    img: "../img/@1x/product-M-3.png",
+                    img: "./img/@1x/product-M-3.png",
                     title: "巴西咖啡豆",
                     button1: { text: "#巴西" },
                     button2: { text: "#日曬" },
@@ -206,7 +206,7 @@
                 },
                 {
                     id: 4,
-                    img: "../img/@1x/product-M-4.png",
+                    img: "./img/@1x/product-M-4.png",
                     title: "哥倫比亞咖啡豆",
                     button1: { text: "#巴西" },
                     button2: { text: "#水洗" },
@@ -216,7 +216,7 @@
                 },
                 {
                     id: 5,
-                    img: "../img/@1x/product-M-5.png",
+                    img: "./img/@1x/product-M-5.png",
                     title: "衣索比亞咖啡豆",
                     button1: { text: "#巴西" },
                     button2: { text: "#水洗" },
@@ -226,7 +226,7 @@
                 },
                 {
                     id: 6,
-                    img: "../img/@1x/product-M-6.png",
+                    img: "./img/@1x/product-M-6.png",
                     title: "肯亞咖啡豆",
                     button1: { text: "#巴西" },
                     button2: { text: "#日曬" },
@@ -236,7 +236,7 @@
                 },
                 {
                     id: 7,
-                    img: "../img/@1x/product-M.png",
+                    img: "./img/@1x/product-M.png",
                     title: "夏威夷咖啡豆",
                     button1: { text: "#巴西" },
                     button2: { text: "#日曬" },
@@ -246,7 +246,7 @@
                 },
                 {
                     id: 8,
-                    img: "../img/@1x/product-M.png",
+                    img: "./img/@1x/product-M.png",
                     title: "阿拉比卡咖啡豆",
                     button1: { text: "#巴西" },
                     button2: { text: "#水洗" },
@@ -266,14 +266,14 @@
                     </div>
 
                     <div className="page-product-all">
-                        <div><img src="../img/@1x/FairTradeCoffee02.png" alt="" /></div>
+                        <div><img src="./img/@1x/FairTradeCoffee02.png" alt="" /></div>
                         <div>
                             <div className="page-product-title-1">
-                                <img src="../title-coco-font/Fair Trade Coffee.png" alt="" />
+                                <img src="./title-coco-font/Fair Trade Coffee.png" alt="" />
                             </div>
                             <div className="page-product-title-2">
                                 <p>針對弱勢的生產者，發展出分別針對屬於自耕農的小農組織和擁有受僱者的農場等兩種公平貿易認證的標準。針對小農組織的公平貿易標準，其要求包括民主決策，確保生產者對於公平貿易組織所投入的輔導金之運用有發言的權利。</p>
-                                <img src="../icon/@1x/wave-product.svg" alt="" />
+                                <img src="./icon/@1x/wave-product.svg" alt="" />
                             </div>
                         </div>
                     </div>

@@ -18,8 +18,8 @@
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./index.css">
 
-    <script src="../js/jquery-1.11.3.min.js"></script>
-    <script src="../js/jquery.jcarousellite.min.js"></script>
+    <script src="./js/jquery-1.11.3.min.js"></script>
+    <script src="./js/jquery.jcarousellite.min.js"></script>
 
     <style>
         /* 移除超連結的 hover 樣式 */
@@ -69,25 +69,25 @@
                         <div className="nav-map"><a href="https://dorisl118.github.io/side-project-POCA/page/contact.html"><p>聯繫我們 &nbsp; | &nbsp; Contact us &nbsp; ❯</p></a></div>
                         <hr />
                         <div className="nav-home" onClick={handleHomeClick}><p>返回 &nbsp; | &nbsp; Return &nbsp; ❯</p></div>
-                        <div className="return" onClick={handleHomeClick}><img src="../icon/@1x/menu-return.svg" alt="" /></div>
+                        <div className="return" onClick={handleHomeClick}><img src="./icon/@1x/menu-return.svg" alt="" /></div>
                     </div>
 
                     <div className="article-container">
                         <div className="row row-cols-2 mt-3">
                             <div className="row-col-2" >
                                 <a href="https://dorisl118.github.io/side-project-POCA/page/index.html">
-                                    <img src="../logo/@1x/Header-LOGO.svg" alt="#" />
+                                    <img src="./logo/@1x/Header-LOGO.svg" alt="#" />
                                 </a>
                             </div>
                             <div className="row-col-2" >
                                 <ul className="nav justify-content-end">
                                     <div className="nav-item-1-1">
                                         <a href="https://dorisl118.github.io/side-project-POCA/page/checkout.html">
-                                            <img src="../icon/@1x/ShoppingCart.svg" alt="" />
+                                            <img src="./icon/@1x/ShoppingCart.svg" alt="" />
                                         </a>
                                     </div>
                                     <li className="nav-item-2" onClick={handleClick}>
-                                        <img src="../icon/@1x/menu.svg" className="nav-link-more" href="#"></img>
+                                        <img src="./icon/@1x/menu.svg" className="nav-link-more" href="#"></img>
                                     </li>
                                 </ul>
                             </div>
@@ -100,108 +100,108 @@
         const articles = [
             {
                 id: 1,
-                img: "../img/cafe/cafe1.png",
+                img: "./img/cafe/cafe1.png",
                 title: "隱藏在巷弄內的老咖啡廳",
-                button1: { src: "../icon/@1x/Plug.svg", text: "有插座" },
-                button2: { src: "../icon/@1x/Wifi.svg", text: "有Wifi" },
-                button3: { src: "../icon/@1x/Pet.svg", text: "寵物友善" },
+                button1: { src: "./icon/@1x/Plug.svg", text: "有插座" },
+                button2: { src: "./icon/@1x/Wifi.svg", text: "有Wifi" },
+                button3: { src: "./icon/@1x/Pet.svg", text: "寵物友善" },
                 url: "https://dorisl118.github.io/side-project-POCA/page/article-content.html",
             },
             {
                 id: 2,
-                img: "../img/cafe/cafe2.png",
+                img: "./img/cafe/cafe2.png",
                 title: "令人食指大動的咖啡廳鹹食料理",
-                button1: { src: "../icon/@1x/Plug.svg", text: "有插座" },
-                button2: { src: "../icon/@1x/nochat.svg", text: "安靜" },
+                button1: { src: "./icon/@1x/Plug.svg", text: "有插座" },
+                button2: { src: "./icon/@1x/nochat.svg", text: "安靜" },
                 url: "https://dorisl118.github.io/side-project-POCA/page/article-content.html",
             },
             {
                 id: 3,
-                img: "../img/cafe/cafe3.png",
+                img: "./img/cafe/cafe3.png",
                 title: "最適合友聚時光的下午茶咖啡館",
-                button1: { src: "../icon/@1x/mrt.svg", text: "淡水信義線" },
-                button2: { src: "../icon/@1x/Date.svg", text: "可訂位" },
+                button1: { src: "./icon/@1x/mrt.svg", text: "淡水信義線" },
+                button2: { src: "./icon/@1x/Date.svg", text: "可訂位" },
                 url: "https://dorisl118.github.io/side-project-POCA/page/article-content.html",
             },
             {
                 id: 4,
-                img: "../img/cafe/cafe4.png",
+                img: "./img/cafe/cafe4.png",
                 title: "沉浸書香，品味咖啡的文學天堂",
-                button1: { src: "../icon/@1x/mrt.svg", text: "松山新店線" },
-                button2: { src: "../icon/@1x/Wifi.svg", text: "有Wifi" },
-                button3: { src: "../icon/@1x/Pet.svg", text: "寵物友善" },
+                button1: { src: "./icon/@1x/mrt.svg", text: "松山新店線" },
+                button2: { src: "./icon/@1x/Wifi.svg", text: "有Wifi" },
+                button3: { src: "./icon/@1x/Pet.svg", text: "寵物友善" },
                 url: "https://dorisl118.github.io/side-project-POCA/page/article-content.html",
             },
             {
                 id: 5,
-                img: "../img/cafe/cafe5.png",
+                img: "./img/cafe/cafe5.png",
                 title: "毛孩天堂：超推的寵物友善咖啡廳",
-                button1: { src: "../icon/@1x/mrt.svg", text: "板南線" },
-                button2: { src: "../icon/@1x/Time.svg", text: "不限時" },
-                button3: { src: "../icon/@1x/Pet.svg", text: "寵物友善" },
+                button1: { src: "./icon/@1x/mrt.svg", text: "板南線" },
+                button2: { src: "./icon/@1x/Time.svg", text: "不限時" },
+                button3: { src: "./icon/@1x/Pet.svg", text: "寵物友善" },
                 url: "https://dorisl118.github.io/side-project-POCA/page/article-content.html",
             },
             {
                 id: 6,
-                img: "../img/cafe/cafe6.png",
+                img: "./img/cafe/cafe6.png",
                 title: "唱片迷必去的復古唱片咖啡廳",
-                button1: { src: "../icon/@1x/Date.svg", text: "可訂位" },
-                button2: { src: "../icon/@1x/Time.svg", text: "不限時" },
-                button3: { src: "../icon/@1x/Plug.svg", text: "有插座" },
+                button1: { src: "./icon/@1x/Date.svg", text: "可訂位" },
+                button2: { src: "./icon/@1x/Time.svg", text: "不限時" },
+                button3: { src: "./icon/@1x/Plug.svg", text: "有插座" },
                 url: "https://dorisl118.github.io/side-project-POCA/page/article-content.html",
             },
             {
                 id: 7,
-                img: "../img/cafe/cafe7.png",
+                img: "./img/cafe/cafe7.png",
                 title: "被療癒了！想被貓咪包圍就來這",
-                button1: { src: "../icon/@1x/Time.svg", text: "有限時" },
-                button2: { src: "../icon/@1x/Time.svg", text: "不限時" },
-                button3: { src: "../icon/@1x/nochat.svg", text: "安靜" },
+                button1: { src: "./icon/@1x/Time.svg", text: "有限時" },
+                button2: { src: "./icon/@1x/Time.svg", text: "不限時" },
+                button3: { src: "./icon/@1x/nochat.svg", text: "安靜" },
                 url: "https://dorisl118.github.io/side-project-POCA/page/article-content.html",
             },
             {
                 id: 8,
-                img: "../img/cafe/cafe8.png",
+                img: "./img/cafe/cafe8.png",
                 title: "超有氣氛的咖啡廳！好吃又好拍",
-                button1: { src: "../icon/@1x/Chat.svg", text: "可聊天" },
-                button2: { src: "../icon/@1x/Time.svg", text: "有限時" },
-                button3: { src: "../icon/@1x/Wifi.svg", text: "有Wifi" },
+                button1: { src: "./icon/@1x/Chat.svg", text: "可聊天" },
+                button2: { src: "./icon/@1x/Time.svg", text: "有限時" },
+                button3: { src: "./icon/@1x/Wifi.svg", text: "有Wifi" },
                 url: "https://dorisl118.github.io/side-project-POCA/page/article-content.html",
             },
             {
                 id: 9,
-                img: "../img/cafe/cafe9.png",
+                img: "./img/cafe/cafe9.png",
                 title: "與毛孩共度美好時光",
-                button1: { src: "../icon/@1x/mrt.svg", text: "松山新店線" },
-                button2: { src: "../icon/@1x/Dinner.svg", text: "有鹹食" },
-                button3: { src: "../icon/@1x/Pet.svg", text: "寵物友善" },
+                button1: { src: "./icon/@1x/mrt.svg", text: "松山新店線" },
+                button2: { src: "./icon/@1x/Dinner.svg", text: "有鹹食" },
+                button3: { src: "./icon/@1x/Pet.svg", text: "寵物友善" },
                 url: "https://dorisl118.github.io/side-project-POCA/page/article-content.html",
             },
             {
                 id: 10,
-                img: "../img/cafe/cafe10.png",
+                img: "./img/cafe/cafe10.png",
                 title: "探索奇幻世界：一趟魔法咖啡之旅",
-                button1: { src: "../icon/@1x/mrt.svg", text: "中和新蘆線" },
-                button2: { src: "../icon/@1x/Dinner.svg", text: "有鹹食" },
-                button3: { src: "../icon/@1x/Chat.svg", text: "可聊天" },
+                button1: { src: "./icon/@1x/mrt.svg", text: "中和新蘆線" },
+                button2: { src: "./icon/@1x/Dinner.svg", text: "有鹹食" },
+                button3: { src: "./icon/@1x/Chat.svg", text: "可聊天" },
                 url: "https://dorisl118.github.io/side-project-POCA/page/article-content.html",
             },
             {
                 id: 11,
-                img: "../img/cafe/cafe11.png",
+                img: "./img/cafe/cafe11.png",
                 title: "城市角落的寶藏咖啡廳",
-                button1: { src: "../icon/@1x/Date.svg", text: "可訂位" },
-                button2: { src: "../icon/@1x/Time.svg", text: "不限時" },
-                button3: { src: "../icon/@1x/Chat.svg", text: "可聊天" },
+                button1: { src: "./icon/@1x/Date.svg", text: "可訂位" },
+                button2: { src: "./icon/@1x/Time.svg", text: "不限時" },
+                button3: { src: "./icon/@1x/Chat.svg", text: "可聊天" },
                 url: "https://dorisl118.github.io/side-project-POCA/page/article-content.html",
             },
             {
                 id: 12,
-                img: "../img/cafe/cafe12.png",
+                img: "./img/cafe/cafe12.png",
                 title: "不限時有插座咖啡廳推薦！辦公讀書必收藏",
-                button1: { src: "../icon/@1x/Plug.svg", text: "有插座" },
-                button2: { src: "../icon/@1x/Time.svg", text: "不限時" },
-                button3: { src: "../icon/@1x/nochat.svg", text: "安靜" },
+                button1: { src: "./icon/@1x/Plug.svg", text: "有插座" },
+                button2: { src: "./icon/@1x/Time.svg", text: "不限時" },
+                button3: { src: "./icon/@1x/nochat.svg", text: "安靜" },
                 url: "https://dorisl118.github.io/side-project-POCA/page/article-content.html",
             },
         ]
@@ -259,16 +259,16 @@
 
                 <div className="dropdown" tag={tag}>
                     <button className="button 文湖線" id="dropdownMenuButton" onClick={(e) => setTag(["線"])}>
-                        <img src="../icon/@1x/mrt.svg" alt="有插座" />鄰近捷運站
+                        <img src="./icon/@1x/mrt.svg" alt="有插座" />鄰近捷運站
                     </button>
-                    <button className="button 有插座" onClick={(e) => setTag("有插座")}><img src="../icon/@1x/Plug.svg" alt="有插座" />有插座</button>
-                    <button className="button 有WIFI" onClick={(e) => setTag("有Wifi")}><img src="../icon/@1x/Wifi.svg" alt="有WIFI" />有WIFI</button>
-                    <button className="button 不限時" onClick={(e) => setTag("不限時")}><img src="../icon/@1x/Time.svg" alt="不限時" />不限時</button>
-                    <button className="button 可訂位" onClick={(e) => setTag("可訂位")}><img src="../icon/@1x/Date.svg" alt="可訂位" />可訂位</button>
-                    <button className="button 寵物友善" onClick={(e) => setTag("寵物友善")}><img src="../icon/@1x/Pet.svg" alt="寵物友善" />寵物友善</button>
-                    <button className="button 可聊天" onClick={(e) => setTag("可聊天")}><img src="../icon/@1x/Chat.svg" alt="可聊天" />可聊天</button>
-                    <button className="button 安靜" onClick={(e) => setTag("安靜")}><img src="../icon/@1x/nochat.svg" alt="安靜" />安靜</button>
-                    <button className="button 有鹹食" onClick={(e) => setTag("有鹹食")} ><img src="../icon/@1x/Dinner.svg" alt="有鹹食" />有鹹食</button>
+                    <button className="button 有插座" onClick={(e) => setTag("有插座")}><img src="./icon/@1x/Plug.svg" alt="有插座" />有插座</button>
+                    <button className="button 有WIFI" onClick={(e) => setTag("有Wifi")}><img src="./icon/@1x/Wifi.svg" alt="有WIFI" />有WIFI</button>
+                    <button className="button 不限時" onClick={(e) => setTag("不限時")}><img src="./icon/@1x/Time.svg" alt="不限時" />不限時</button>
+                    <button className="button 可訂位" onClick={(e) => setTag("可訂位")}><img src="./icon/@1x/Date.svg" alt="可訂位" />可訂位</button>
+                    <button className="button 寵物友善" onClick={(e) => setTag("寵物友善")}><img src="./icon/@1x/Pet.svg" alt="寵物友善" />寵物友善</button>
+                    <button className="button 可聊天" onClick={(e) => setTag("可聊天")}><img src="./icon/@1x/Chat.svg" alt="可聊天" />可聊天</button>
+                    <button className="button 安靜" onClick={(e) => setTag("安靜")}><img src="./icon/@1x/nochat.svg" alt="安靜" />安靜</button>
+                    <button className="button 有鹹食" onClick={(e) => setTag("有鹹食")} ><img src="./icon/@1x/Dinner.svg" alt="有鹹食" />有鹹食</button>
                     <button className="button 全部" onClick={(e) => setTag("")}>All</button>
                 </div>
 
