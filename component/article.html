@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>article</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.2.0/redux.min.js"
+        integrity="sha512-1/8Tj23BRrWnKZXeBruk6wTnsMJbi/lJsk9bsRgVwb6j5q39n0A00gFjbCTaDo5l5XrPVv4DZXftrJExhRF/Ug=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./article.css">
+
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const articles = [
+            {
+                id: 1,
+                img: "../img/cafe/cafe1.png",
+                title: "隱藏在巷弄內的老咖啡廳",
+                button: "../icon/@1x/Plug.svg",
+            },
+            {
+                id: 2,
+                img: "../img/cafe/cafe2.png",
+                title: "令人食指大動的咖啡廳鹹食料理",
+                button: "../icon/@1x/Wifi.svg",
+            },
+            {
+                id: 3,
+                img: "../img/cafe/cafe3.png",
+                title: "最適合友聚時光的下午茶咖啡館",
+                button: "../icon/@1x/Wifi.svg",
+            },
+        ]
+
+
+        const App = () => {
+            const Article = () => {
+                return <>
+                    {articles.map(({ id, img, title, button }) => (
+                        <div className="article-item" key={id}>
+                            <img className="article-item-photo" src={img} alt="咖啡廳形象照" />
+                            <p className="title">{title}</p>
+                            <button className="button"><img src={button} alt="button" /></button>
+                        </div>
+                    ))}
+                </>
+            }
+
+            return (<>
+            
+                <div className="article-all">
+                    <Article />
+                </div>
+            </>);
+
+        }
+
+
+        ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>首頁 | 找咖啡 | 文章內容</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.2.0/redux.min.js"
+        integrity="sha512-1/8Tj23BRrWnKZXeBruk6wTnsMJbi/lJsk9bsRgVwb6j5q39n0A00gFjbCTaDo5l5XrPVv4DZXftrJExhRF/Ug=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./index.css">
+
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script src="../js/jquery.jcarousellite.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+    <div id="nav"></div>
+    <script type="text/babel">
+
+        const { useState } = React;
+
+        const Nav = () => {
+            const [showOverlay, setShowOverlay] = useState(false);
+
+            const handleClick = () => {
+                setShowOverlay(!showOverlay); // 點擊時切換 showOverlay 的狀態
+            };
+
+            const handleHomeClick = () => {
+                setShowOverlay(false); // 點擊 Home 時隱藏 showOverlay
+            };
+
+            return (
+                <>
+                    <div className={`overlay ${showOverlay ? 'show-overlay' : ''}`}>
+                        <div className="nav-find"><a href="https://dorisl118.github.io/side-project-POCA/page/index.html"><p>首頁 &nbsp; | &nbsp; POCA &nbsp; ❯</p></a></div>
+                        <hr />
+                        <div className="nav-find"><a href="https://dorisl118.github.io/side-project-POCA/page/article.html"><p>找咖啡 &nbsp; | &nbsp; Cafe Article &nbsp; ❯</p></a></div>
+                        <hr />
+                        <div className="nav-buy"><a href="https://dorisl118.github.io/side-project-POCA/page/product.html"><p>買咖啡 &nbsp; | &nbsp; Coffee Shop &nbsp; ❯</p></a></div>
+                        <hr />
+                        <div className="nav-map"><a href="https://dorisl118.github.io/side-project-POCA/page/map.html"><p>店家地圖 &nbsp; | &nbsp; Cafe Map &nbsp; ❯</p></a></div>
+                        <hr />
+                        <div className="nav-map"><a href="https://dorisl118.github.io/side-project-POCA/page/contact.html"><p>聯繫我們 &nbsp; | &nbsp; Contact us &nbsp; ❯</p></a></div>
+                        <hr />
+                        <div className="nav-home" onClick={handleHomeClick}><p>返回 &nbsp; | &nbsp; Return &nbsp; ❯</p></div>
+                        <div className="return" onClick={handleHomeClick}><img src="../icon/@1x/menu-return.svg" alt="" /></div>
+                    </div>
+
+                    <div className="article-container">
+                        <div className="row row-cols-2 mt-3">
+                            <div className="row-col-2" >
+                                <a href="https://dorisl118.github.io/side-project-POCA/page/index.html">
+                                    <img src="../logo/@1x/Header-LOGO.svg" alt="#" />
+                                </a>
+                            </div>
+                            <div className="row-col-2" >
+                                <ul className="nav justify-content-end">
+                                    <div className="nav-item-1-1">
+                                        <a href="https://dorisl118.github.io/side-project-POCA/page/checkout.html">
+                                            <img src="../icon/@1x/ShoppingCart.svg" alt="" />
+                                        </a>
+                                    </div>
+                                    <li className="nav-item-2" onClick={handleClick}>
+                                        <img src="../icon/@1x/menu.svg" className="nav-link-more" href="#"></img>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </>
+            );
+        }
+
+        const content = [
+            {
+                id: 1,
+                title: "歐德咖啡館 Old Coffee",
+                button1: { src: "../icon/@1x/Plug.svg", text: "有插座" },
+                button2: { src: "../icon/@1x/Wifi.svg", text: "有Wifi" },
+                button3: { src: "../icon/@1x/Pet.svg", text: "寵物友善" },
+                address: "台北市中正區濟南路一段321號",
+                phone: "02-2397-5400",
+                time: "09:00–17:30（週二休）"
+            },
+        ]
+
+        const text = [
+            {
+                id: 1,
+                title: "隱藏在巷弄內的老咖啡廳",
+                text1: "在繁華的城市裡，有一些寧靜的角落隱藏著讓人驚艷的寶藏。\n今天要和大家分享的就是這樣一個特別的地方，一間隱藏在巷弄內的老咖啡廳。位於市中心的熙來攘往之間，這間老咖啡廳卻像是一個時光隧道，帶領著人們回到了過去的美好時光。走進這個咖啡廳，首先映入眼簾的是一片濃厚的復古氛圍。老式的木質桌椅、古典風格的燈具、懷舊的壁畫，每一處細節都彷彿在述說著這裡的故事。",
+                text2: "這間老咖啡廳並不像現代咖啡連鎖店那樣冷冰冰，反而充滿了溫暖與人情味。店內的員工總是笑臉相迎，讓人感受到家的溫馨。而這裡的客人也各有其故事，有些是附近的居民，有些則是專程來此尋找靈感的藝術家和作家。\n但這間咖啡廳最吸引人的地方，當然是它的咖啡了。他們的咖啡不僅香醇濃郁，更是帶有一絲絲懷舊的味道，讓人彷彿置身於上世紀的巴黎咖啡館中。無論是濃郁的拿鐵、香醇的美式還是柔和的卡布奇諾，每一口都讓人心曠神怡。\n雖然這間老咖啡廳沒有華麗的裝潢，也沒有搶眼的招牌，但卻吸引了許多尋找真正美好時光的人們。在這裡，你可以放下一天的煩憂，悠然地品味咖啡，閱讀一本書，或者與友人聊天，享受一個寧靜而美好的午後。\n 如果你正在尋找一個遠離喧囂的地方，一個讓你可以放鬆心情，靜心沉澱的角落，那麼這間隱藏在巷弄內的老咖啡廳絕對是你的最佳選擇。走進這裡，你會發現，時光在這裡流動得格外緩慢，讓你有足夠的時間去感受生活的美好。\n"
+            }
+        ]
+
+
+        const Content = () => {
+            const ContentTitle = () => {
+                return <>
+                    {content.map(({ id, title, button1, button2, button3, address, phone, time }) => (
+                        <div className="content-title-2" key={id}>
+                            <p className="title">{title}</p>
+                            <div>
+                                <button className="button">
+                                    <img src={button1.src} alt="button" />
+                                    <p>{button1.text}</p>
+                                </button>
+                                {button2 &&
+                                    <button className="button">
+                                        <img src={button2.src} alt="button" />
+                                        <p>{button2.text}</p>
+                                    </button>}
+                                {button3 &&
+                                    <button className="button">
+                                        <img src={button3.src} alt="button" />
+                                        <p>{button3.text}</p>
+                                    </button>}
+                            </div>
+                            <div><img src="../icon/@1x/Place.svg" alt="地址" style={{ margin: '40px 8px 0 0' }} />{address}</div>
+                            <div><img src="../icon/@1x/Phone.svg" alt="電話" style={{ margin: '10px 8px 0 0' }} />{phone}</div>
+                            <div><img src="../icon/@1x/Time.svg" alt="營業時間" style={{ margin: '10px 8px 0 0' }} />{time}</div>
+                            <img src="../img/@1x/wave-article-v0427.svg" alt="" style={{ marginTop: '60px', width: "26vw" }} />
+                            <iframe className="content-map" src="../map/map.html" frameBorder="0" style={{ marginTop: '20px' }}></iframe>
+                        </div>
+                    ))}
+                </>
+            }
+
+
+            const Text = () => {
+                return (
+                    <>
+                        {text.map(({ id, title, text1, text2 }) => (
+                            <div className="article-text" key={id}>
+                                <div className="title"><p>{title}</p></div>
+                                <hr />
+                                <div className="text"><p>{text1.split('\n').map((line, index) => <>{line}<br key={index} /></>)}</p></div>
+                                <div><img src="../img/@1x/articleImg02.png" alt="咖啡廳照片" /></div>
+                                <div className="text"><p>{text2.split('\n').map((line, index) => <>{line}<br key={index} /></>)}</p></div>
+                                <div>
+                                    <div className="title"><p>菜單</p></div>
+                                    <hr />
+                                    <div className="ps"><p>僅供參考請依現場提供之內容為準</p></div>
+                                    <div><img src="../img/@1x/menu.png" alt="菜單" /></div>
+                                </div>
+                            </div>
+                        ))}
+                    </>
+                );
+            }
+
+
+            return (<>
+
+                <Nav></Nav>
+
+                <div className="page-title">
+                    <hr />
+                    <p>首頁 | 找咖啡 | 文章內容</p>
+                    <hr />
+                </div>
+
+                <section className="article-content-text">
+                    <section className="content-title-all">
+                        <div className="content-title-img"><img src="../img/@1x/articleTop.png" alt="首圖" /></div>
+                        <div className="content-title-1">
+                            <ContentTitle></ContentTitle>
+                        </div>
+                    </section>
+
+                    <section className="article-text-all">
+                        <Text></Text>
+                    </section>
+
+                    <div className="footer">
+                        <hr />
+                        <p> © 2024 POCA. | 跑咖 </p>
+                    </div>
+
+                </section>
+            </>);
+
+        }
+
+        ReactDOM.createRoot(document.getElementById('nav')).render(<Nav />);
+        ReactDOM.createRoot(document.getElementById('root')).render(<Content />);
+
+    </script>
+
+</body>
+
+</html>

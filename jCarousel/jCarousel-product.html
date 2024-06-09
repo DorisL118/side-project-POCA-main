@@ -1,0 +1,276 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>jCarouselLite-旋轉木馬</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            function getVisibleItems() {
+                var width = $(window).width();
+                if (width >= 1024) {
+                    return 6;
+                } else if (width >= 768) {
+                    return 3;
+                } else {
+                    return 1;
+                }
+            }
+
+            var visibleItems = getVisibleItems();
+
+            $("#product-all").jCarouselLite({
+                auto: 1200,	//多久時間輪播
+                scroll: 1,	//一次輪播的張數
+                visible: visibleItems,	//一次看到幾張圖
+                speed: 1000,	//輪播的速度
+            });
+        });
+    </script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            /* 隱藏水平滾動條 */
+        }
+
+        #product-all {
+            visibility: visible;
+            overflow: hidden;
+            position: relative;
+            z-index: 2;
+            left: 0px;
+            width: 100vw !important;
+            box-sizing: border-box;
+            /* 確保寬度計算包含邊框和內距 */
+        }
+
+        #product-all ul {
+            display: flex;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            box-sizing: border-box;
+        }
+
+        #product-all li {
+            flex: 0 0 auto;
+            margin-right: 10px;
+        }
+
+        .product-item {
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            box-sizing: border-box;
+            /* 確保寬度計算包含邊框和內距 */
+        }
+
+        .product-item-photo {
+            width: 100%;
+            height: auto;
+            box-sizing: border-box;
+        }
+
+        /* 桌面版 */
+        @media (min-width: 1025px) {
+            #product-all .product-item {
+                width: calc((100vw / 6) - 10px);
+                height: auto;
+                overflow: hidden;
+            }
+        }
+
+        /* 平板版 */
+        @media (max-width: 1024px) and (min-width: 641px) {
+            #product-all .product-item {
+                width: calc((100vw / 3) - 10px);
+                height: auto;
+                overflow: hidden;
+            }
+        }
+
+        /* 手機版 */
+        @media (max-width: 640px) {
+            #product-all .product-item {
+                width: calc(100vw - 10px);
+                height: auto;
+                overflow: hidden;
+            }
+        }
+
+        :root {
+            /* 背景顏色 */
+            --bg-color-1: #F6F7F2;
+
+            /* 主色調 */
+            --main: #CDD42A;
+            --deep: #111111;
+            --light: #FFFFFF;
+        }
+
+        button {
+            border-radius: 99px;
+            margin: 0px 8px 0px 0px;
+            border-width: 0.25px;
+            border-style: solid;
+            background-color: transparent;
+            color: #111111;
+            border: 0.25px solid #111111;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-size: .8rem;
+            display: flex;
+            float: left;
+            align-items: center;
+            padding: 2px 7px 2px 4px;
+        }
+
+        .button img {
+            padding: 0 2px 0 2px;
+            width: 1.1rem;
+            color: #686868;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        p {
+            cursor: pointer;
+            font-weight: 550;
+            font-family: sans-serif;
+        }
+
+        .title {
+            font-size: 1rem;
+            font-weight: 700;
+            margin: 10px 0px;
+            display: -webkit-box;
+            /* 必須設定這個屬性才能實現多行省略 */
+            -webkit-box-orient: vertical;
+            /* 必須設置這個屬性才能實現多行省略 */
+            -webkit-line-clamp: 1;
+            /* 設置顯示的行數 */
+            overflow: hidden;
+            /* 隱藏超出的部分 */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root">
+        <a target="_blank" href="https://dorisl118.github.io/side-project-POCA/page/product.html">
+            <div id="product-all">
+                <ul>
+                    <li>
+
+                        <div className="product-item">
+                            <img src="../img/@1x/product-M.png" alt="" />
+                            <div className="product-item-btn">
+                                <p class="title">台灣咖啡豆</p>
+                                <button><small>#巴西</small></button>
+                                <button><small>#水洗</small></button>
+                                <button><small>#中深焙</small></button>
+                            </div>
+                        </div>
+
+                    </li>
+
+                    <li>
+                        <div className="product-item">
+                            <img src="../img/@1x/product-M.png" alt="" />
+                            <div className="product-item-btn">
+                                <p class="title">羅布斯塔咖啡豆</p>
+                                <button><small>#巴西</small></button>
+                                <button><small>#水洗</small></button>
+                                <button><small>#中深焙</small></button>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div className="product-item">
+                            <img src="../img/@1x/product-M.png" alt="" />
+                            <div className="product-item-btn">
+                                <p class="title">巴西咖啡豆</p>
+                                <button><small>#巴西</small></button>
+                                <button><small>#日曬</small></button>
+                                <button><small>#中焙</small></button>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div className="product-item">
+                            <img src="../img/@1x/product-M.png" alt="" />
+                            <div className="product-item-btn">
+                                <p class="title">哥倫比亞咖啡豆</p>
+                                <button><small>#巴西</small></button>
+                                <button><small>#水洗</small></button>
+                                <button><small>#深焙</small></button>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div className="product-item">
+                            <img src="../img/@1x/product-M.png" alt="" />
+                            <div className="product-item-btn">
+                                <p class="title">衣索比亞咖啡豆</p>
+                                <button><small>#巴西</small></button>
+                                <button><small>#水洗</small></button>
+                                <button><small>#中深焙</small></button>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div className="product-item">
+                            <img src="../img/@1x/product-M.png" alt="" />
+                            <div className="product-item-btn">
+                                <p class="title">肯亞咖啡豆</p>
+                                <button><small>#巴西</small></button>
+                                <button><small>#日曬</small></button>
+                                <button><small>#深焙</small></button>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div className="product-item">
+                            <img src="../img/@1x/product-M.png" alt="" />
+                            <div className="product-item-btn">
+                                <p class="title">夏威夷咖啡豆</p>
+                                <button><small>#巴西</small></button>
+                                <button><small>#日曬</small></button>
+                                <button><small>#深焙</small></button>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div className="product-item">
+                            <img src="../img/@1x/product-M.png" alt="" />
+                            <div className="product-item-btn">
+                                <p class="title">阿拉比卡咖啡豆</p>
+                                <button><small>#巴西</small></button>
+                                <button><small>#水洗</small></button>
+                                <button><small>#淺焙</small></button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </a>
+    </div>
+
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script src="../js/jquery.jcarousellite.min.js"></script>
+</body>
+
+</html>

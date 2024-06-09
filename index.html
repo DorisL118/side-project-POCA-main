@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>POCA | 首頁</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.2.0/redux.min.js"
+        integrity="sha512-1/8Tj23BRrWnKZXeBruk6wTnsMJbi/lJsk9bsRgVwb6j5q39n0A00gFjbCTaDo5l5XrPVv4DZXftrJExhRF/Ug=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./index.css">
+
+</head>
+
+<body>
+    <div id="root"></div>
+    <div id="nav"></div>
+    <script type="text/babel">
+
+        const { useState, useEffect } = React;
+
+        const Nav = () => {
+            const [showOverlay, setShowOverlay] = useState(false);
+
+            const handleClick = () => {
+                setShowOverlay(!showOverlay); // 點擊時切換 showOverlay 的狀態
+            };
+
+            const handleHomeClick = () => {
+                setShowOverlay(false); // 點擊 Home 時隱藏 showOverlay
+            };
+
+            return (
+                <>
+                    <div className={`overlay ${showOverlay ? 'show-overlay' : ''}`}>
+                        <div className="nav-find"><a href="https://dorisl118.github.io/side-project-POCA/page/index.html"><p>首頁 &nbsp; | &nbsp; POCA &nbsp; ❯</p></a></div>
+                        <hr />
+                        <div className="nav-find"><a href="https://dorisl118.github.io/side-project-POCA/page/article.html"><p>找咖啡 &nbsp; | &nbsp; Cafe Article &nbsp; ❯</p></a></div>
+                        <hr />
+                        <div className="nav-buy"><a href="https://dorisl118.github.io/side-project-POCA/page/product.html"><p>買咖啡 &nbsp; | &nbsp; Coffee Shop &nbsp; ❯</p></a></div>
+                        <hr />
+                        <div className="nav-map"><a href="https://dorisl118.github.io/side-project-POCA/page/map.html"><p>店家地圖 &nbsp; | &nbsp; Cafe Map &nbsp; ❯</p></a></div>
+                        <hr />
+                        <div className="nav-map"><a href="https://dorisl118.github.io/side-project-POCA/page/contact.html"><p>聯繫我們 &nbsp; | &nbsp; Contact us &nbsp; ❯</p></a></div>
+                        <hr />
+                        <div className="nav-home" onClick={handleHomeClick}><p>返回 &nbsp; | &nbsp; Return &nbsp; ❯</p></div>
+                        <div className="return"  onClick={handleHomeClick}><img src="../icon/@1x/menu-return.svg" alt=""/></div>
+                    </div>
+
+                    <div className="container">
+                        <div className="row row-cols-2 mt-3">
+                            <div className="row-col-2">
+                                <a href="https://dorisl118.github.io/side-project-POCA/page/index.html">
+                                    <img src="../logo/@1x/Header-LOGO.svg" alt="#" />
+                                </a>
+                            </div>
+                            <div className="row-col-2" >
+                                <ul className="nav justify-content-end">
+                                    <li className="nav-item-1">
+                                        <a href="https://dorisl118.github.io/side-project-POCA/page/checkout.html">
+                                            <img src="../icon/@1x/ShoppingCart.svg" alt="" className="nav-link-shop" />
+                                        </a>
+                                    </li>
+                                    <li className="nav-item-2" onClick={handleClick}>
+                                        <img src="../icon/@1x/menu.svg" className="nav-link-more" href="#"></img>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </>
+            );
+        }
+
+        const App = () => {
+
+            return <>
+                {/*首頁*/}
+                <div className="index">
+
+                    <Nav id="nav"></Nav>
+
+                    <section className="header">
+                        <div className="header-photo">
+                            <img src="../img/@1x/Top1.png" alt="" />
+                            <img src="../img/@1x/Top2.png" alt="" />
+                            <img src="../img/@1x/Top3.png" alt="" />
+                        </div>
+                        <div className="header-logo">
+                            <img src="../logo/@1x/LOGO-L.svg" alt="" />
+                        </div>
+                        <div className="header-logo-1 animate-up">
+                            <img src="../logo/@1x/LOGO-Line.svg" alt="" />
+                        </div>
+                        <div className="header-logo-2 animate-down">
+                            <img src="../logo/@1x/LOGO-Line.svg" alt="" />
+                        </div>
+
+                        <iframe className="scrolldownIframe" src="../jCarousel/scrolldown.html" frameborder="0"></iframe>
+                    </section>
+
+                    {/*搜尋主題*/}
+                    <section id="search">
+                        <div className="search-1">
+                            <div className="search-bg">
+                                <img src="../img/@1x/wave.svg" alt="" />
+                            </div>
+
+                            <div className="search-item-all">
+                                <div className="search-item">
+                                    <div className="search-item-bg"><img src="../img/@1x/index-find.jpg" alt="" /></div>
+                                    <div className="search-item-content">
+                                        <img src="../icon/@1x/magnifier-L.svg" alt="" />
+                                        <div><a href="#article"><p>找咖啡</p></a></div>
+                                    </div>
+                                </div>
+
+                                <div className="search-item">
+                                    <div className="search-item-bg"><img src="../img/@1x/index-fair.jpg" alt="" /></div>
+                                    <div className="search-item-content"><link href="" />
+                                        <img src="../icon/@1x/Q.svg" alt="" />
+                                        <div><a href="#coffee"><p>公平貿易咖啡</p></a></div>
+                                    </div>
+                                </div>
+
+                                <div className="search-item">
+                                    <div className="search-item-bg"><img src="../img/@1x/index-buy.jpg" alt="" /></div>
+                                    <div className="search-item-content"><link href="" />
+                                        <img src="../icon/@1x/CoffeeBean.svg" alt="" />
+                                        <div><a href="#product"><p>買咖啡</p></a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+
+                    {/*文章 找咖啡*/}
+                    <section id="article">
+                        <div className="article-title">
+                            <div>
+                                <p>找咖啡</p>
+                                <img src="../title-coco-font/CAFE.png" alt="" />
+                            </div>
+                            <div>
+                                <a href="https://dorisl118.github.io/side-project-POCA/page/article.html"><p className="view-all">View All ❯</p></a>
+                            </div>
+                        </div>
+
+                        <div className="jCarousel"><iframe src="../jCarousel/jCarousel-article.html" frameborder="0"></iframe></div>
+                    </section>
+
+
+                    {/*地圖*/}
+                    <section className="map">
+                        <iframe id="map-content" src="../map/map.html" frameBorder="0"></iframe>
+                    </section>
+
+
+                    {/*公平貿易咖啡*/}
+                    <section id="coffee">
+                        <div className="coffe-item-all">
+                            <div className="coffe-item-1">
+                                <p>公平貿易咖啡</p>
+                                <img src="../title-coco-font/Fair Trade Coffee.png" alt="" />
+                                <img className="coffe-item-1-img" src="../img/@1x/FairTradeCoffee01.png" alt="" />
+                                <img src="../img/@1x/CB-1.svg" alt="Image 1" className="scroll-img" />
+                                <img src="../img/@1x/CB-2.svg" alt="Image 2" className="scroll-img" />
+                            </div>
+
+                            <div className="coffe-item-2">
+                                <p id="fair-trade-text"></p>
+                            </div>
+                        </div>
+
+                        <div className="coffe-2">
+                            <div className="wave"><img src="../img/@1x/wave-M.svg" alt="" /></div>
+
+                            <div className="coffe-item-all-2">
+                                <div className="coffe-item-2-1"><img src="../img/@1x/circle-txt.svg" alt="" /></div>
+                                <div className="coffe-item-2-2"><a href="https://dorisl118.github.io/side-project-POCA/page/product.html"><p>Buy It Now !</p></a></div>
+                            </div>
+                        </div>
+
+                    </section>
+
+
+                    {/*咖啡豆販賣產品*/}
+                    <section id="product">
+                        <div className="product-title">
+                            <div>
+                                <p>買咖啡</p>
+                                <img src="../title-coco-font/ONLINE SHOP.png" alt="" />
+                            </div>
+                            <div>
+                                <a href="https://dorisl118.github.io/side-project-POCA/page/product.html"><p className="view-all">View All ❯</p></a>
+                            </div>
+                        </div>
+
+                        <div className="jCarousel"><iframe src="../jCarousel/jCarousel-product.html" frameborder="0"></iframe></div>
+                    </section>
+
+
+                    <div className="footer">
+                        <hr />
+                        <p> © 2024 POCA. | 跑咖</p>
+                    </div>
+                </div>
+            </>
+
+        }
+
+        ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+        ReactDOM.createRoot(document.getElementById('nav')).render(<Nav />);
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,256 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>jCarouselLite-旋轉木馬</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function () {
+            function getVisibleItems() {
+                var width = $(window).width();
+                if (width >= 1024) {
+                    return 4; // 桌面裝置顯示 5 張
+                } else if (width >= 768) {
+                    return 3; // 平板裝置顯示 3 張
+                } else {
+                    return 1; // 手機裝置顯示 1 張
+                }
+            }
+
+
+            var visibleItems = getVisibleItems();
+
+            $("#article-all").jCarouselLite({
+                auto: 1200,	//多久時間輪播
+                scroll: 1,	//一次輪播的張數
+                visible: visibleItems,	//一次看到幾張圖
+                speed: 1000,	//輪播的速度
+            });
+        });
+    </script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            /* 隱藏水平滾動條 */
+        }
+
+        #article-all {
+            visibility: visible;
+            overflow: hidden;
+            position: relative;
+            z-index: 2;
+            left: 0px;
+            width: 100vw !important;
+            box-sizing: border-box;
+            /* 確保寬度計算包含邊框和內距 */
+        }
+
+        #article-all ul {
+            display: flex;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            box-sizing: border-box;
+        }
+
+        #article-all li {
+            flex: 0 0 auto;
+            margin-right: 10px;
+        }
+
+        .article-item {
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .article-item-photo {
+            width: 100%;
+            height: auto;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /*bg color*/
+            --bg-color-1: #F6F7F2;
+
+            /*main color*/
+            --main: #CDD42A;
+            --deep: #111111;
+            --light: #FFFFFF;
+        }
+
+        button {
+            border-radius: 99px;
+            margin: 0px 8px 0px 0px;
+            border-width: 0.25px;
+            border-style: solid;
+            background-color: transparent;
+            color: #111111;
+            border: 0.25px solid #111111;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-size: .8rem;
+            display: flex;
+            float: left;
+            align-items: center;
+            padding: 2px 7px 2px 4px;
+        }
+
+        .button img {
+            padding: 0 2px 0 2px;
+            width: 1.1rem;
+            color: #686868;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        p {
+            cursor: pointer;
+            font-weight: 550;
+            font-family: sans-serif;
+            text-align: left;
+        }
+
+        .title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin: 10px 0px;
+            display: -webkit-box;
+            /* 必須設定這個屬性才能實現多行省略 */
+            -webkit-box-orient: vertical;
+            /* 必須設置這個屬性才能實現多行省略 */
+            -webkit-line-clamp: 1;
+            /* 設置顯示的行數 */
+            overflow: hidden;
+            /* 隱藏超出的部分 */
+        }
+
+
+        /* 桌面版 */
+        @media (min-width: 1025px) {
+            #article-all .article-item {
+                width: calc((100vw / 4) - 10px);
+                overflow: hidden;
+            }
+
+            .article-title p {
+                margin-top: 5rem;
+            }
+
+            .product-title p {
+                margin-top: 2rem;
+            }
+        }
+
+        /* 平板版 */
+        @media (max-width: 1024px) and (min-width: 641px) {
+            #article-all .article-item {
+                width: calc((100vw / 2) - 10px);
+                height: auto;
+                overflow: hidden;
+            }
+
+            .title {
+                font-size: 1rem;
+            }
+        }
+
+        /* 手機版 */
+        @media (max-width: 640px) {
+            #article-all .article-item {
+                width: calc(100vw - 10px);
+                height: auto;
+                overflow: hidden;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root">
+        <a target="_blank" href="https://dorisl118.github.io/side-project-POCA/page/article.html">
+            <div id="article-all">
+                <ul>
+                    <li>
+                        <div class="article-item">
+                            <img class="article-item-photo" src="../img/cafe/cafe1.png" alt="" />
+                            <p class="title">隱藏在巷弄在地人的老咖啡廳</p>
+                            <button class="button"><img src="../icon/@1x/Wifi.svg" alt="有WIFI" />有WIFI</button>
+                            <button class="button"><img src="../icon/@1x/Plug.svg" alt="有插座" />有插座</button>
+                            <button class="button"><img src="../icon/@1x/Pet.svg" alt="寵物友善" />寵物友善</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="article-item">
+                            <img class="article-item-photo" src="../img/cafe/cafe2.png" alt="" />
+                            <p class="title">令人食指大動的咖啡廳鹹食料理</p>
+                            <button class="button"><img src="../icon/@1x/mrt.svg"
+                                    alt="淡水信義線" /><small>淡水信義線</small></button>
+                            <button class="button"><img src="../icon/@1x/Plug.svg"
+                                    alt="有插座" /><small>有插座</small></button>
+                            <button class="button"><img src="../icon/@1x/nochat.svg"
+                                    alt="禁止交談" /><small>安靜</small></button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="article-item">
+                            <img class="article-item-photo" src="../img/cafe/cafe3.png" alt="" />
+                            <p class="title">最適合友聚時光的下午茶咖啡館</p>
+                            <button class="button"><img src="../icon/@1x/Wifi.svg"
+                                    alt="有WIFI" /><small>有WIFI</small></button>
+                            <button class="button"><img src="../icon/@1x/Time.svg"
+                                    alt="有限時" /><small>有限時</small></button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="article-item">
+                            <img class="article-item-photo" src="../img/cafe/cafe4.png" alt="" />
+                            <p class="title">沉浸書香，品味咖啡的文學天堂</p>
+                            <button class="button"><img src="../icon/@1x/Wifi.svg"
+                                    alt="有WIFI" /><small>有WIFI</small></button>
+                            <button class="button"><img src="../icon/@1x/mrt.svg"
+                                    alt="松山新店線" /><small>松山新店線</small></button>
+                            <button class="button"><img src="../icon/@1x/Pet.svg"
+                                    alt="寵物友善" /><small>寵物友善</small></button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="article-item">
+                            <img class="article-item-photo" src="../img/cafe/cafe5.png" alt="" />
+                            <p class="title">毛孩天堂：超推的寵物友善咖啡廳</p>
+                            <button class="button"><img src="../icon/@1x/Pet.svg"
+                                    alt="寵物友善" /><small>寵物友善</small></button>
+                            <button class="button"><img src="../icon/@1x/mrt.svg"
+                                    alt="板南線" /><small>板南線</small></button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="article-item">
+                            <img class="article-item-photo" src="../img/cafe/cafe6.png" alt="" />
+                            <p class="title">唱片迷必去的復古唱片咖啡廳</p>
+                            <button class="button"><img src="../icon/@1x/Date.svg"
+                                    alt="可訂位" /><small>可訂位</small></button>
+                            <button class="button"><img src="../icon/@1x/Time.svg"
+                                    alt="不限時" /><small>不限時</small></button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </a>
+    </div>
+
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script src="../js/jquery.jcarousellite.min.js"></script>
+</body>
+
+</html>

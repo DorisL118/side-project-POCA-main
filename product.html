@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>首頁 | 買咖啡 </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.2.0/redux.min.js"
+        integrity="sha512-1/8Tj23BRrWnKZXeBruk6wTnsMJbi/lJsk9bsRgVwb6j5q39n0A00gFjbCTaDo5l5XrPVv4DZXftrJExhRF/Ug=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./index.css">
+    <script src="./product.js"></script>
+
+
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script src="../js/jquery.jcarousellite.min.js"></script>
+</head>
+<style>
+    .nav-item-1-1 {
+        position: relative;
+        margin-left: 0.8rem;
+    }
+
+    .nav-item-1-2 {
+        position: absolute;
+        top: 3%;
+    }
+
+    .article-container {
+        cursor: pointer;
+    }
+</style>
+
+<body>
+    <div id="root"></div>
+    <div id="nav"></div>
+    <script type="text/babel">
+
+        const { useState, useEffect } = React;
+
+        const Nav = ({ cartQuantity }) => {
+
+            const [showOverlay, setShowOverlay] = useState(false);
+
+            const handleClick = () => {
+                setShowOverlay(!showOverlay); // 點擊時切換 showOverlay 的狀態
+            };
+
+            const handleHomeClick = () => {
+                setShowOverlay(false); // 點擊 Home 時隱藏 showOverlay
+            };
+
+            return (
+                <>
+                    <div className={`overlay ${showOverlay ? 'show-overlay' : ''}`}>
+                        <div className="nav-find"><a href="https://dorisl118.github.io/side-project-POCA/page/index.html"><p>首頁 &nbsp; | &nbsp; POCA &nbsp; ❯</p></a></div>
+                        <hr />
+                        <div className="nav-find"><a href="https://dorisl118.github.io/side-project-POCA/page/article.html"><p>找咖啡 &nbsp; | &nbsp; Cafe Article &nbsp; ❯</p></a></div>
+                        <hr />
+                        <div className="nav-buy"><a href="https://dorisl118.github.io/side-project-POCA/page/product.html"><p>買咖啡 &nbsp; | &nbsp; Coffee Shop &nbsp; ❯</p></a></div>
+                        <hr />
+                        <div className="nav-map"><a href="https://dorisl118.github.io/side-project-POCA/page/map.html"><p>店家地圖 &nbsp; | &nbsp; Cafe Map &nbsp; ❯</p></a></div>
+                        <hr />
+                        <div className="nav-map"><a href="https://dorisl118.github.io/side-project-POCA/page/contact.html"><p>聯繫我們 &nbsp; | &nbsp; Contact us &nbsp; ❯</p></a></div>
+                        <hr />
+                        <div className="nav-home" onClick={handleHomeClick}><p>返回 &nbsp; | &nbsp; Return &nbsp; ❯</p></div>
+                        <div className="return" onClick={handleHomeClick}><img src="../icon/@1x/menu-return.svg" alt="" /></div>
+                    </div>
+
+                    <div className="article-container">
+                        <div className="row row-cols-2 mt-3">
+                            <div className="row-col-2" >
+                                <a href="https://dorisl118.github.io/side-project-POCA/page/index.html">
+                                    <img src="../logo/@1x/Header-LOGO.svg" alt="#" />
+                                </a>
+                            </div>
+                            <div className="row-col-2" >
+                                <ul className="nav justify-content-end">
+                                    <li className="nav-item">
+                                        <div className="nav-item-1-1" id="cartIcon">
+                                            <a href="https://dorisl118.github.io/side-project-POCA/page/checkout.html">
+                                                <img src="../icon/@1x/ShoppingCart.svg" alt="" />
+                                            </a>
+                                        </div>
+                                        <div className="nav-item-1-2">{cartQuantity}</div>
+                                    </li>
+                                    <li className="nav-item" onClick={handleClick}>
+                                        <img src="../icon/@1x/menu.svg" className="nav-link-more" href="#"></img>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </>
+            );
+        }
+
+
+        const ShoppingCart = ({ item, updateCartQuantity }) => {
+            const [quantity, setQuantity] = useState(1); // 初始化數量為1
+
+            // 減少數量
+            const decreaseQuantity = () => {
+                if (quantity > 1) {
+                    setQuantity(quantity - 1);
+                }
+            }
+
+            // 增加數量
+            const increaseQuantity = () => {
+                setQuantity(quantity + 1);
+            }
+
+            // 更新購物車數量
+            const submitCart = (event) => {
+                updateCartQuantity(item, quantity);
+                animateIcon(event);
+            };
+
+
+            return (
+                <div className="counter">
+                    <label htmlFor="quantity">數量</label>
+                    <input type="text" id="quantity" value={quantity} readOnly />
+                    <button className="counter-btn" onClick={increaseQuantity}>＋</button>
+                    <button className="counter-btn" onClick={decreaseQuantity}>－</button>
+                    <div type="submit" onClick={submitCart}><img src="../icon/@1x/ShoppingCart-btn.svg" alt="" /></div>
+                </div>
+            )
+        }
+
+
+        const Product = () => {
+            const [cartItems, setCartItems] = useState([]);
+            const [cartQuantity, setCartQuantity] = useState(0);
+
+            // 在組件加載時從 localStorage 中讀取購物車數據
+            useEffect(() => {
+                const savedCartItems = localStorage.getItem('cartItems');
+                if (savedCartItems) {
+                    const parsedCartItems = JSON.parse(savedCartItems);
+                    setCartItems(parsedCartItems);
+                    setCartQuantity(parsedCartItems.reduce((acc, item) => acc + item.quantity, 0));
+                }
+            }, []);
+
+            const updateCartQuantity = (item, quantity) => {
+                const existingItem = cartItems.find(cartItem => cartItem.id === item.id);
+                let updatedCartItems;
+
+                if (existingItem) {
+                    updatedCartItems = cartItems.map(cartItem =>
+                        cartItem.id === item.id
+                            ? { ...cartItem, quantity: cartItem.quantity + quantity }
+                            : cartItem
+                    );
+                } else {
+                    updatedCartItems = [...cartItems, { ...item, quantity }];
+                }
+
+                setCartItems(updatedCartItems);
+                setCartQuantity(updatedCartItems.reduce((acc, item) => acc + item.quantity, 0));
+
+                // 將購物車數據保存到 localStorage
+                localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
+            };
+
+            const products = [
+                {
+                    id: 1,
+                    img: "../img/@1x/product-M.png",
+                    title: "台灣咖啡豆",
+                    button1: { text: "#巴西" },
+                    button2: { text: "#水洗" },
+                    button3: { text: "#中深焙" },
+                    price: "674",
+                    url: "https://dorisl118.github.io/side-project-POCA/page/product-content.html",
+                },
+                {
+                    id: 2,
+                    img: "../img/@1x/product-M-2.png",
+                    title: "羅布斯塔咖啡豆",
+                    button1: { text: "#巴西" },
+                    button2: { text: "#水洗" },
+                    button3: { text: "#中深焙" },
+                    price: "564",
+                    url: "https://dorisl118.github.io/side-project-POCA/page/product-content.html",
+                },
+                {
+                    id: 3,
+                    img: "../img/@1x/product-M-3.png",
+                    title: "巴西咖啡豆",
+                    button1: { text: "#巴西" },
+                    button2: { text: "#日曬" },
+                    button3: { text: "#中焙" },
+                    price: "357",
+                    url: "https://dorisl118.github.io/side-project-POCA/page/product-content.html",
+                },
+                {
+                    id: 4,
+                    img: "../img/@1x/product-M-4.png",
+                    title: "哥倫比亞咖啡豆",
+                    button1: { text: "#巴西" },
+                    button2: { text: "#水洗" },
+                    button3: { text: "#深焙" },
+                    price: "450",
+                    url: "https://dorisl118.github.io/side-project-POCA/page/product-content.html",
+                },
+                {
+                    id: 5,
+                    img: "../img/@1x/product-M-5.png",
+                    title: "衣索比亞咖啡豆",
+                    button1: { text: "#巴西" },
+                    button2: { text: "#水洗" },
+                    button3: { text: "#中深焙" },
+                    price: "654",
+                    url: "https://dorisl118.github.io/side-project-POCA/page/product-content.html",
+                },
+                {
+                    id: 6,
+                    img: "../img/@1x/product-M-6.png",
+                    title: "肯亞咖啡豆",
+                    button1: { text: "#巴西" },
+                    button2: { text: "#日曬" },
+                    button3: { text: "#淺焙" },
+                    price: "230",
+                    url: "https://dorisl118.github.io/side-project-POCA/page/product-content.html",
+                },
+                {
+                    id: 7,
+                    img: "../img/@1x/product-M.png",
+                    title: "夏威夷咖啡豆",
+                    button1: { text: "#巴西" },
+                    button2: { text: "#日曬" },
+                    button3: { text: "#深焙" },
+                    price: "330",
+                    url: "https://dorisl118.github.io/side-project-POCA/page/product-content.html",
+                },
+                {
+                    id: 8,
+                    img: "../img/@1x/product-M.png",
+                    title: "阿拉比卡咖啡豆",
+                    button1: { text: "#巴西" },
+                    button2: { text: "#水洗" },
+                    button3: { text: "#淺焙" },
+                    price: "590",
+                    url: "https://dorisl118.github.io/side-project-POCA/page/product-content.html",
+                },
+            ]
+
+            return <>
+                <div>
+                    <Nav cartQuantity={cartQuantity} />
+                    <div className="page-title">
+                        <hr />
+                        <p>首頁 | 買咖啡 </p>
+                        <hr />
+                    </div>
+
+                    <div className="page-product-all">
+                        <div><img src="../img/@1x/FairTradeCoffee02.png" alt="" /></div>
+                        <div>
+                            <div className="page-product-title-1">
+                                <img src="../title-coco-font/Fair Trade Coffee.png" alt="" />
+                            </div>
+                            <div className="page-product-title-2">
+                                <p>針對弱勢的生產者，發展出分別針對屬於自耕農的小農組織和擁有受僱者的農場等兩種公平貿易認證的標準。針對小農組織的公平貿易標準，其要求包括民主決策，確保生產者對於公平貿易組織所投入的輔導金之運用有發言的權利。</p>
+                                <img src="../icon/@1x/wave-product.svg" alt="" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="product-content-all">
+                        {products.map(({ id, url, img, title, button1, button2, button3, price }) => (
+                            <div className="product-content" key={id}>
+                                <div>
+                                    <a href={url}>
+                                        <img className="product-content-photo" src={img} alt="公平貿易咖啡豆" />
+                                        <div>
+                                            <p className="product-content-title">{title}</p>
+                                            <button className="button">
+                                                <p>{button1.text}</p>
+                                            </button>
+                                            {button2 &&
+                                                <button className="button">
+                                                    <p>{button2.text}</p>
+                                                </button>}
+                                            {button3 &&
+                                                <button className="button">
+                                                    <p>{button3.text}</p>
+                                                </button>}
+                                        </div>
+                                    </a>
+                                </div>
+                                <div>
+                                    <div className="price"><p>NT$ {price}</p></div>
+                                    <ShoppingCart item={{ id, title, img, price }} updateCartQuantity={updateCartQuantity} />
+                                </div>
+                                <hr />
+                            </div>
+                        ))}
+                    </div>
+
+                    <div className="footer">
+                        <hr />
+                        <p> © 2024 POCA. | 跑咖 </p>
+                    </div>
+                </div>
+            </>
+        }
+
+
+        ReactDOM.createRoot(document.getElementById('nav')).render(<Nav />);
+        ReactDOM.createRoot(document.getElementById('root')).render(<Product />);
+    </script>
+
+</body>
+
+</html>

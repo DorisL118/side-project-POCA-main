@@ -1,0 +1,34 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+
+
+@font-face{
+    font-family: "noto-sans-tc";
+    src: url(../noto-sans-tc-font);
+}
+#article-nav {
+    width: 100vw;
+    height: 10px;
+    background-color: #F6F7F2;
+}
+.article-all {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* 內容分散排列 */
+    margin: 0px auto; /* 水平置中 */
+}
+.article-item {
+    width: calc(33.33% - 20px); /* 每個欄位佔三分之一，並考慮間距 */
+    margin-bottom: 20px; /* 元素之間的間距 */
+    
+}
+.article-item-photo {
+    width: 100%; /* 圖片佔滿父容器寬度 */
+    height: auto;
+    margin-bottom: 10px;
+}
+.title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 10px 0px;
+}

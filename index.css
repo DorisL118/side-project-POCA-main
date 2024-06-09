@@ -1,0 +1,2805 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* eric's css */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    font-family: inherit;
+    vertical-align: baseline;
+}
+
+/* remember to define focus styles! */
+:focus {
+    outline: 0;
+}
+
+body {
+    line-height: 1;
+    color: black;
+    background: white;
+    width: 100vw !important;
+    overflow-x: hidden !important;
+}
+
+
+main {
+    overflow: hidden;
+    /* 確保主內容區域不會有額外滾動條 */
+}
+
+iframe {
+    width: 100vw;
+    height: 100%;
+}
+
+.jCarousel iframe {
+    width: 100%;
+    height: 500px;
+    /* 設置適當的高度 */
+    border: none;
+}
+
+.jCarousel {
+    width: 100vw;
+    height: 50vh;
+    overflow: hidden;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+caption,
+th,
+td {
+    text-align: left;
+    font-weight: normal;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: "";
+}
+
+blockquote,
+q {
+    quotes: "" "";
+}
+
+/*--------------- 共用區 ---------------*/
+@font-face {
+    font-family: "noto-sans-tc";
+    src: url('../noto-sans-tc-font.woff2') format('woff2'),
+        url('../noto-sans-tc-font.woff') format('woff');
+    unicode-range: U+4E00-9FFF;
+    /* 中日韩统一表意文字 */
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../popins-font/Poppins-Light.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../popins-font/Poppins-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../popins-font/Poppins-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+.view-all {
+    font-family: "Poppins", sans-serif !important;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #111111;
+    letter-spacing: 0.2rem;
+    line-height: 1.2rem;
+    cursor: pointer;
+}
+
+
+
+body {
+    font-family: "noto-sans-tc", "Poppins", sans-serif;
+    background-color: var(--bg-color-1);
+    overflow-x: hidden;
+}
+
+section {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#search,
+.map,
+#coffee,
+#product section {
+    justify-content: center;
+}
+
+#search,
+.map,
+#product section {
+    overflow: hidden;
+}
+
+
+/* 電腦 */
+@media (min-width: 1024px) {
+    .header {
+        height: auto;
+        /* 自定義電腦端樣式 */
+    }
+
+}
+
+/* 平板 */
+@media (max-width: 1023px) and (min-width: 641px) {
+    .header {
+        height: 43vh;
+        width: 100%;
+        margin-bottom: 150px;
+    }
+
+    #article,
+    .map,
+    #coffee,
+    #product section {
+        justify-content: center;
+    }
+
+    #search {
+        width: 100%;
+        height: 35vh;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+}
+
+/* 手機板 */
+@media (max-width: 640px) {
+    .header {
+        height: 70vh;
+        width: 100%;
+        margin-bottom: 80px !important;
+    }
+
+    .header-photo img {
+        height: 60vh !important;
+        width: 138%;
+        overflow: hidden;
+    }
+
+    .header-logo {
+        position: absolute;
+        margin-left: 45% !important;
+        transform: translate(-90px, 200px) !important;
+        z-index: 555;
+    }
+
+    #search,
+    #article,
+    .map,
+    #coffee,
+    #product section {
+        justify-content: center;
+    }
+
+    #search {
+        width: 100%;
+        height: 85vh;
+    }
+
+    #search section {
+        width: 100%;
+        height: 70vh;
+        margin-bottom: 150px;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+}
+
+
+:root {
+    /*bg color*/
+    --bg-color-1: #F6F7F2;
+
+    /*main color*/
+    --main: #CDD42A;
+    --deep: #111111;
+    --light: #FFFFFF;
+}
+
+button {
+    border-radius: 99px;
+    margin: 0px 8px 0px 0px;
+    border-width: 0.25px;
+    border-style: solid;
+    background-color: transparent;
+    color: #111111;
+    border: 0.25px solid #111111;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: .8rem;
+    display: flex;
+    float: left;
+    align-items: center;
+    padding: 3px 7px 3px 4px;
+}
+
+.button {
+    border-radius: 99px;
+    margin: 0px 8px 0px 0px;
+    border-width: 0.25px;
+    border-style: solid;
+    background-color: transparent;
+    color: #111111;
+    border: 0.25px solid #111111;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: .8rem;
+    display: flex;
+    float: left;
+    align-items: center;
+    padding: 3px 7px 3px 4px;
+}
+
+.button img {
+    padding: 0 2px 0 2px;
+    width: 1.1rem;
+    color: #686868;
+}
+
+.product-item-btn {
+    margin-top: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover,
+.nav-find:hover,
+.nav-buy:hover,
+.nav-map:hover,
+.nav-home:hover {
+    color: var(--main)
+}
+
+.return {
+    position: absolute;
+    top: 20px;
+    right: 60px;
+    cursor: pointer;
+}
+
+.return:hover {
+    background-color: var(--main);
+    border-radius: 999;
+}
+
+
+p {
+    cursor: pointer;
+    font-weight: 550;
+    font-family: sans-serif;
+}
+
+.ps {
+    font-weight: 300;
+    font-size: .7rem;
+    color: #777777;
+}
+
+.justify-content-end {
+    justify-content: flex-end !important;
+    align-items: center;
+}
+
+#article {
+    scroll-margin-top: 200px;
+    /* 設置上方間距 */
+}
+
+#coffee,
+#product {
+    scroll-margin-top: 100px;
+    /* 設置上方間距 */
+}
+
+.vertical-line {
+    width: 0.8px;
+    height: 60%;
+    background-color: #c7c7c7;
+    margin-right: 30px;
+}
+
+/* RWD斷點 */
+/* 電腦 */
+@media (min-width: 1025px) {
+    .return {
+        position: absolute;
+        top: 20px;
+        right: 35px;
+        cursor: pointer;
+    }
+}
+
+/* 平板 */
+@media (max-width: 1024px) and (min-width: 641px) {
+    .vertical-line {
+        display: none;
+    }
+
+    .return {
+        position: absolute;
+        top: 20px;
+        right: 35px;
+        cursor: pointer;
+    }
+}
+
+/* 手機板 */
+@media (max-width:640px) {
+    .vertical-line {
+        display: none;
+    }
+}
+
+
+/*--------------- nav ---------------*/
+#nav {
+    position: absolute;
+    /* 將 #nav 設置為絕對定位 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6.5vh;
+    background-color: rgba(255, 255, 255, 0.009);
+    z-index: 99;
+    /* 確保 #nav 在其他元素上方 */
+}
+
+.nav-item-1,
+.nav-item-2,
+.nav-item-search {
+    padding: 4px;
+    cursor: pointer;
+}
+
+.nav-item-1-1 {
+    position: relative;
+    margin-left: 1rem;
+}
+
+.nav-link-more {
+    cursor: pointer;
+}
+
+.nav-item-search {
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(120, 120, 120, 0.9);
+    /* 半透明背景 */
+    backdrop-filter: blur(10px);
+    /* 毛玻璃效果 */
+    z-index: 999;
+    display: none;
+}
+
+.overlay hr {
+    width: 10vw;
+    margin: 0 auto;
+}
+
+.overlay p {
+    text-align: center;
+}
+
+.show-overlay {
+    display: block;
+    /* 點擊後顯示 */
+}
+
+.nav-find,
+.nav-buy,
+.nav-map,
+.nav-contact,
+.nav-home {
+    padding: 3% 0;
+}
+
+/* 平板 */
+@media (max-width: 1024px) and (min-width: 641px) {
+
+    .nav-find,
+    .nav-buy,
+    .nav-map,
+    .nav-contact,
+    .nav-home {
+        padding: 6% 0;
+    }
+}
+
+/* 手機板 */
+@media (max-width:640px) {
+
+    .nav-find,
+    .nav-buy,
+    .nav-map,
+    .nav-contact,
+    .nav-home {
+        padding: 10% 0;
+    }
+}
+
+.container {
+    background-color: transparent !important;
+    position: absolute;
+    width: 100vw;
+}
+
+.row {
+    width: 100vw;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.row-cols-2>* {
+    flex: 0 0 auto;
+    width: 45%;
+}
+
+/*--------------- header ---------------*/
+.header {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    margin-bottom: 150px;
+    z-index: 1;
+}
+
+/* header RWD斷點 */
+/* 電腦 */
+@media (min-width: 1025px) {}
+
+/* 平板 */
+@media (max-width: 1024px) and (min-width: 641px) {
+    #search {
+        width: 100%;
+        height: 40vh;
+    }
+
+    #article {
+        width: 100%;
+        height: 50vh;
+        overflow-x: hidden;
+    }
+
+    .header {
+        height: 45vh;
+        width: 100%;
+        margin-bottom: 150px;
+    }
+
+    .header-logo {
+        transform: translateY(75%);
+    }
+
+    #search section {
+        width: 100%;
+        height: 55vh;
+    }
+
+    .animate-up {
+        display: none;
+    }
+
+    .animate-down {
+        display: none;
+    }
+}
+
+/* 手機板 */
+@media (max-width:640px) {
+    .header {
+        height: 70vh;
+        width: 100%;
+        margin-bottom: 200px;
+    }
+
+    .header-photo img {
+        height: 65vh;
+        width: 130%;
+        overflow: hidden;
+    }
+
+    .header-logo {
+        position: absolute;
+        margin-left: 40%;
+        transform: translate(-70px, 200px);
+    }
+
+    #search section {
+        width: 100%;
+        height: 90vh;
+        margin-bottom: 100px;
+    }
+
+    .animate-up {
+        display: none;
+    }
+
+    .animate-down {
+        display: none;
+    }
+}
+
+.header-photo {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.header-photo img {
+    height: 100vh;
+    width: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    animation: changeImage 6s infinite;
+}
+
+.header-photo img:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.header-photo img:nth-child(2) {
+    animation-delay: 2s;
+}
+
+.header-photo img:nth-child(3) {
+    animation-delay: 4s;
+}
+
+@keyframes changeImage {
+
+    0%,
+    33.33% {
+        opacity: 1;
+    }
+
+    33.34%,
+    100% {
+        opacity: 0;
+    }
+}
+
+
+.header-logo {
+    position: absolute;
+    margin-left: 50%;
+    transform: translateY(100%);
+    z-index: 4;
+}
+
+.header-logo-1 {
+    position: absolute;
+    margin-left: 50%;
+    transform: translateY(100%);
+}
+
+.header-logo-2 {
+    position: absolute;
+    margin-left: 50%;
+    transform: translateY(100%);
+    z-index: 5;
+}
+
+.animate-up {
+    animation: moveUp 2s ease-out infinite alternate;
+}
+
+.animate-down {
+    animation: moveDown 2s ease-out infinite alternate;
+}
+
+@keyframes moveUp {
+    from {
+        transform: translate(0, 75%) translateY(0);
+        /* 從原始位置開始，不進行垂直移動 */
+    }
+
+    to {
+        transform: translate(0, 75%) translateY(-200px);
+        /* 向上移動 50px */
+    }
+}
+
+@keyframes moveDown {
+    from {
+        transform: translate(0, 75%) translateY(0);
+        /* 從原始位置開始，不進行垂直移動 */
+    }
+
+    to {
+        transform: translate(0, 75%) translateY(350px);
+        /* 向下移動 50px */
+    }
+}
+
+
+
+/* RWD斷點 */
+/* 電腦 */
+@media (min-width: 1025px) {}
+
+/* 平板 */
+@media (max-width: 1024px) and (min-width: 641px) {
+    .header-photo img {
+        height: auto;
+        width: 80%;
+    }
+
+    .header-logo img {
+        width: 75%;
+    }
+}
+
+/* 手機板 */
+@media (max-width:640px) {
+    .header-logo img {
+        width: 95%;
+    }
+
+    .header-photo img {
+        height: auto;
+        width: 130%;
+        overflow: hidden;
+    }
+
+    .header-logo {
+        position: absolute;
+        margin-left: 51%;
+        transform: translate(-100px, 150px);
+    }
+}
+
+
+.scrolldownIframe {
+    position: absolute;
+    right: 10px;
+    width: 50px;
+    border: none;
+    overflow: hidden;
+    top: 65%;
+}
+
+/*--------------- 搜尋主題 ---------------*/
+
+/* RWD斷點 */
+/* 電腦 */
+.search-1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#search {
+    width: 100%;
+}
+
+.search-bg {
+    position: relative;
+    width: 100vw;
+    /* 佔滿視窗寬度 */
+    height: 100vh;
+    /* 佔滿視窗高度 */
+    overflow: hidden;
+    /* 隱藏超出部分 */
+}
+
+.search-bg img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 80%;
+    object-fit: contain;
+    /* 保持圖片比例並縮放以適應容器 */
+    transform: translate(-50%, -50%);
+    /* 將圖片中心對齊容器中心 */
+}
+
+.search-item-all {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+.search-item {
+    margin: 0 15px;
+    /* 在 Flexbox 中水平平均分散 */
+    text-align: center;
+    /* 文字水平置中 */
+    position: relative;
+    /* 設置 search-item 為相對定位 */
+}
+
+.search-item-bg {
+    width: 47vh;
+    height: 40vh;
+    animation: 10s ease-in-out 0s infinite alternate none running morph, 20s linear 0s infinite alternate none running change;
+    overflow: hidden;
+    position: relative;
+}
+
+.search-item-bg img {
+    width: auto;
+    height: 100%;
+}
+
+.search-item-content {
+    color: #FFFFFF;
+    font-size: 2rem;
+    font-weight: 700;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.search-item-bg:hover {
+    animation-play-state: paused;
+    /* 在:hover時暫停動畫 */
+}
+
+.search-item-bg::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    /* 默认隐藏 */
+    transition: opacity 0.3s ease;
+    /* 添加过渡效果 */
+}
+
+.search-item:hover .search-item-bg::after {
+    opacity: 1;
+    /* 鼠标悬停时显示 */
+}
+
+@keyframes morph {
+
+    0%,
+    100% {
+        border-radius: 68% 55% 80% 50% / 68% 60% 70% 55%;
+    }
+
+    20% {
+        border-radius: 37% 63% 51% 49% / 37% 65% 35% 63%;
+    }
+
+    40% {
+        border-radius: 36% 64% 64% 36% / 64% 48% 52% 36%;
+    }
+
+    60% {
+        border-radius: 37% 63% 51% 49% / 30% 30% 70% 70%;
+    }
+
+    80% {
+        border-radius: 40% 60% 42% 58% / 41% 51% 49% 59%;
+    }
+}
+
+@keyframes change {
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+@media (min-width: 1025px) {}
+
+/* 平板 */
+@media (max-width: 1024px) and (min-width: 641px) {
+    .search-item-bg {
+        width: 22vh;
+        height: 22vh;
+        animation: 10s ease-in-out 0s infinite alternate none running morph, 20s linear 0s infinite alternate none running change;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .search-item-bg img {
+        width: 105%;
+        height: 100%;
+    }
+
+    .search-item {
+        margin: 0 3px;
+        text-align: center;
+        position: relative;
+    }
+
+    .search-bg img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 40%;
+        width: auto;
+        object-fit: contain;
+        transform: translate(-50%, -50%);
+    }
+
+    .search-item p {
+        cursor: pointer;
+        font-weight: 550;
+        font-family: sans-serif;
+        font-size: 1.3rem;
+    }
+}
+
+/* 手機板 */
+@media (max-width:640px) {
+    .search-item {
+        width: 30vh;
+        height: 31vh;
+        margin: 0px auto;
+        text-align: center;
+        position: relative;
+    }
+
+    .search-item-bg {
+        width: 30vh;
+        height: 30vh;
+        animation: 10s ease-in-out 0s infinite alternate none running morph, 20s linear 0s infinite alternate none running change;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .search-bg img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 80%;
+        width: auto;
+        object-fit: contain;
+        transform: translate(-50%, -50%);
+    }
+
+    .search-item-all {
+        flex-direction: column;
+        /* 在手機板上改為直向排列 */
+        align-items: stretch;
+        /* 讓元素佔滿整個寬度 */
+    }
+
+    .search-item p {
+        cursor: pointer;
+        font-weight: 550;
+        font-family: sans-serif;
+        font-size: 1.3rem;
+    }
+}
+
+
+
+
+
+
+
+
+/*--------------- 文章 找咖啡 ---------------*/
+#article {
+    width: 100%;
+}
+
+.article-title {
+    margin: 0px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.article-title p {
+    font-family: "noto-sans-tc";
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #111111;
+    letter-spacing: 0.2rem;
+    line-height: 1.2rem;
+    margin-top: 3rem;
+}
+
+
+.article-title img {
+    margin-top: 10px;
+}
+
+#article-all ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px auto 0;
+}
+
+.article-item-photo {
+    width: 40vh;
+    height: 30vh;
+    margin: 5px;
+    margin-bottom: 10px;
+}
+
+.title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 10px 0px;
+}
+
+/* 電腦 */
+@media (min-width: 1025px) {
+    .article-title p {
+        margin-top: 5rem;
+    }
+
+    .product-title p {
+        margin-top: 2rem;
+    }
+}
+
+/* 手機板 */
+@media (max-width:640px) {
+    .article-title img {
+        width: 20vw;
+    }
+}
+
+
+
+
+/*--------------- 地圖 ---------------*/
+.map {
+    height: 100vh;
+    margin: auto;
+}
+
+#map-content {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+/*--------------- 公平貿易咖啡 ---------------*/
+#coffe {
+    margin: 0 0 200px 0;
+}
+
+.coffe-item-all {
+    padding: 0px 45px;
+    display: flex;
+    flex-direction: row;
+}
+
+.coffe-item-1 {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    position: relative;
+}
+
+.coffe-item-1 img {
+    margin-top: 10px;
+}
+
+.coffe-item-1-img {
+    width: 80vh;
+    height: auto;
+}
+
+.coffe-item-2 {
+    margin: 0px 10vh;
+    display: flex;
+    align-items: center;
+}
+
+.coffe-item-1 p {
+    font-family: "noto-sans-tc";
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #111111;
+    letter-spacing: 0.2rem;
+    line-height: 1.2rem;
+}
+
+.coffe-item-2 p {
+    font-family: "noto-sans-tc";
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #111111;
+    letter-spacing: 0.2rem;
+    line-height: 1.2rem;
+    padding: 60px 0px 0px 40px;
+}
+
+p br {
+    display: block;
+    /* 將換行符視為區塊元素 */
+    content: " ";
+    /* 使用空白內容來確保換行後有內容 */
+    margin-bottom: 1em;
+    /* 調整段落下邊距 */
+}
+
+br::after {
+    content: "";
+    display: block;
+    margin-top: 1em;
+    /* 調整空行的行高，根據需要調整 */
+}
+
+#fair-trade-text::after {
+    content: "針對弱勢的生產者，發展出分別針對屬於自耕農的小農組織和擁有受僱者的農場等兩種公平貿易認證的標準。";
+    display: block;
+    white-space: pre-wrap;
+    /* 允許文本換行 */
+    line-height: 1.6;
+    /* 設置行間距 */
+}
+
+/* 電腦版 */
+@media (min-width: 1024px) {
+    #fair-trade-text::after {
+        font-size: 1rem;
+        content: "針對弱勢的生產者，發展出分別針對屬於自耕農的小農組織和擁有受僱者的農場等兩種公平貿易認證的標準。\A\A針對小農組織的公平貿易標準，其要求包括民主決策，確保生產者對於公平貿易組織所投入的輔導金之運用有發言的權利。\A\A針對擁有受僱者的農場，其標準需確保勞動者擁有適當的工資，以及加入工會和團體協商的權利。公平貿易認證的農場必須確保沒有強迫勞動、雇用童工、危害健康與安全的情況。\A\A根據公平貿易認證的標準，擁有受僱者的農場必須設置一位中間人（joint body）代表勞資雙方。這位中間人決定如何將公平貿易組織所投入的輔導金分配予農場的工人。\A\A某些產品，例如咖啡，只有小農組織可以申請公平貿易認證。其他類似茶葉，則兩種組織形式皆可以申請認證。";
+    }
+}
+
+/* 平板 */
+@media (max-width: 1023px) and (min-width: 641px) and (min-width: 641px) {
+    #fair-trade-text::after {
+        font-size: 1.2rem;
+        content: "針對弱勢的生產者，發展出分別針對屬於自耕農的小農組織和擁有受僱者的農場等兩種公平貿易認證的標準。\A\A針對小農組織的公平貿易標準，其要求包括民主決策，確保生產者對於公平貿易組織所投入的輔導金之運用有發言的權利。\A\A針對擁有受僱者的農場，其標準需確保勞動者擁有適當的工資，以及加入工會和團體協商的權利。";
+    }
+}
+
+/* 手機板 */
+@media (max-width: 640px) {
+    #fair-trade-text::after {
+        font-size: 1.2rem;
+        content: "針對弱勢的生產者，發展出分別針對屬於自耕農的小農組織和擁有受僱者的農場等兩種公平貿易認證的標準。";
+        margin: 50px 0;
+    }
+
+    .coffe-item-2-2 p {
+        text-align: center;
+        font-size: .9rem;
+    }
+}
+
+/* RWD斷點 */
+/* 電腦 */
+@media (min-width: 1025px) {}
+
+/* 平板 */
+@media (max-width: 1024px) and (min-width: 641px) {
+    .coffe-item-all {
+        display: block;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .coffe-item-1 img {
+        width: 60vh;
+        height: auto;
+    }
+
+    .coffe-2 {
+        padding: 20px 40px 0px 0px;
+    }
+
+    .coffe-item-2 p {
+        font-size: 0.6rem;
+    }
+}
+
+/* 手機板 */
+@media (max-width:640px) {
+    .coffe-item-2 {
+        margin: 0px 0vh;
+    }
+
+    .coffe-item-2-1 img {
+        width: 18vh;
+    }
+
+    .coffe-item-2 p {
+        font-size: 0.5rem;
+        margin: 0px 3vh;
+        padding: 0px;
+    }
+
+    .coffe-item-2-2 p {
+        text-align: center;
+    }
+
+    .coffe-item-1 img {
+        width: 38vh;
+        height: auto;
+    }
+
+    .wave img {
+        width: 100%;
+    }
+
+    .coffe-2 {
+        padding: 30px 0px 0px 0px;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.coffe-2 {
+    padding: 0px 40px 0px 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.wave {
+    width: 100%;
+}
+
+.wave img {
+    width: 90%;
+}
+
+.coffe-item-all-2 {
+    position: relative;
+}
+
+.coffe-item-2-1 {
+    position: relative;
+    animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.coffe-item-2-2 {
+    position: absolute;
+    /* 設置為絕對定位 */
+    top: 50%;
+    /* 垂直置中 */
+    left: 50%;
+    /* 水平置中 */
+    transform: translate(-50%, -50%);
+    /* 居中 */
+    cursor: pointer;
+}
+
+.scroll-img {
+    height: 70vh;
+    width: 60vw;
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 第二個圖片動畫 */
+@keyframes fadeIn2 {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+        /* 從上方移動 */
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.coffe-item-1 .scroll-img {
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.coffe-item-1 .scroll-img:nth-child(1) {
+    animation-delay: 0.5s;
+}
+
+.coffe-item-1 .scroll-img:nth-child(2) {
+    animation-delay: 1s;
+}
+
+/*--------------- 產品 ---------------*/
+#product {
+    padding-top: 100px;
+}
+
+.product-title {
+    margin: 0px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#product p {
+    font-family: "noto-sans-tc";
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #111111;
+    letter-spacing: 0.2rem;
+    line-height: 1.2rem;
+}
+
+
+
+/* 平板 */
+@media (max-width: 1024px) and (min-width: 641px) {
+    #product {
+        padding-top: 200px;
+    }
+
+}
+
+/* 手機板 */
+@media (max-width:640px) {
+    .product-title img {
+        width: 40vw;
+    }
+}
+
+
+
+#cartIcon {}
+
+.fly-icon {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: url('../icon/@1x/CoffeeBean.main.svg') no-repeat center center;
+    background-size: contain;
+    pointer-events: none;
+    z-index: 1000;
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+
+/*--------------- footer ---------------*/
+.footer {
+    width: 100vw;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.footer p {
+    text-align: center;
+    padding: 10px 0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*--------------- Page-2 | Article 找咖啡 文章 ---------------*/
+@font-face {
+    font-family: "noto-sans-tc";
+    src: url(../noto-sans-tc-font);
+}
+
+#article-nav {
+    height: 7vh;
+    width: 100vw;
+    background-color: var(--bg-color-1);
+}
+
+.article-container {
+    background-color: transparent !important;
+    width: 100vw;
+}
+
+.article-content-all {
+    width: 80vw;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px auto;
+    margin-bottom: 100px;
+}
+
+.page-title {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    /* 允許元素換行 */
+    margin-top: 5px;
+}
+
+.page-title p {
+    margin-left: 3vw;
+    font-size: .8rem;
+    color: #777777;
+    margin-top: 2px;
+}
+
+.page-title hr {
+    display: block;
+    width: 100%;
+    /* 設置 hr 寬度為父元素的寬度 */
+    height: 1px;
+    /* 設置 hr 高度 */
+    border: none;
+    /* 移除 hr 邊框 */
+    background-color: #111111;
+    /* 設置 hr 背景顏色 */
+    margin: 6px 0;
+}
+
+
+/* 電腦版 */
+.article-content {
+    width: calc(33.33% - 20px);
+    margin: 0px 10px 0 10px;
+    margin-bottom: 20px;
+}
+
+/* 平板版 */
+@media (max-width: 1023px) and (min-width: 641px) {
+    .article-content {
+        width: calc(50% - 20px);
+        margin: 0px 10px 0 10px;
+        margin-bottom: 20px;
+    }
+}
+
+/* 手機版 */
+@media (max-width: 640px) {
+    .article-content {
+        width: calc(100% - 20px);
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
+
+.article-content-photo {
+    width: 100%;
+    height: auto;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+
+.title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 10px 0px;
+}
+
+/* 選單 */
+.dropdown {
+    display: inline-block;
+    margin: 10px 50px 40px 45px;
+}
+
+.dropdown button {
+    margin-right: 10px;
+    background-color: #f1f1f1;
+    color: #2e2e2e;
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+}
+
+.dropdown button:hover {
+    margin-right: 10px;
+    background-color: var(--main);
+    color: #141414;
+    border: 1px solid #ffffff;
+    padding: 8px 12px;
+}
+
+.dropdown img {
+    width: 15px;
+    margin-right: 4px;
+}
+
+.dropdown-toggle {
+    background-color: #f1f1f1;
+    color: #333;
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+    cursor: pointer;
+    position: relative;
+    font-size: .9rem;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 6rem;
+    left: 5.9%;
+    transform: translateX(-50%);
+    z-index: 1;
+    top: calc(100% + 3px);
+    /* 將菜單顯示在 toggle 下方 */
+    font-size: .9rem;
+}
+
+.dropdown-item {
+    padding: 8px 12px;
+    display: block;
+    color: #333;
+    text-decoration: none;
+}
+
+.dropdown-item:hover {
+    background-color: var(--main);
+    color: #141414;
+}
+
+/* 當 button.dropdown-toggle 被 hover 時，顯示相鄰的 .dropdown-menu */
+.button.dropdown-toggle:hover+.dropdown-menu {
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*--------------- Page-3 | Article-Content 找咖啡 文章 內容---------------*/
+.article-content-text section {
+    width: 100vw;
+    height: auto;
+    margin-bottom: 50px;
+}
+
+.content-title-all {
+    display: flex;
+    flex-direction: row;
+}
+
+.content-title-img {
+    width: 70%;
+    height: auto;
+}
+
+.content-title-img img {
+    width: 95%;
+}
+
+.content-title-1 {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.content-title-2 {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-size: 1.5rem;
+}
+
+.content-title-2 iframe {
+    width: 53vh;
+    height: 35vh;
+}
+
+/* RWD斷點
+/* 電腦 */
+@media (min-width: 1025px) {}
+
+/* 平板 */
+@media (max-width: 1024px) and (min-width: 641px) {
+    .content-title-all {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100vw;
+    }
+
+    .content-title-img img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .content-title-1 {
+        width: 40vw;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .content-title-2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 40vw;
+    }
+
+    .content-title-2 iframe {
+        width: 20vh;
+        height: 15vh;
+    }
+}
+
+/* 手機板 */
+@media (max-width:640px) {
+    .article-content-text {
+        width: 100vw;
+        overflow-x: hidden;
+    }
+
+    .content-title-all {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .coffe-item-all {
+        padding: 0px 45px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .content-title-img {
+        width: 100vw;
+        height: 50vh;
+        overflow-x: hidden;
+    }
+
+    .content-title-img img {
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+    }
+
+    .content-title-2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+    }
+}
+
+.article-text-all {
+    display: flex;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.text {
+    font-size: 1.2rem;
+    color: #919191;
+    margin: 10vh 0 10vh 0;
+}
+
+.article-text-all p {
+    cursor: pointer;
+    font-weight: 500;
+    letter-spacing: 2.3px;
+    line-height: 1.3rem;
+}
+
+.article-text {
+    width: 65vw;
+    height: auto;
+}
+
+.article-text img {
+    width: 65vw;
+    height: auto;
+}
+
+/* 平板 */
+@media (max-width: 1024px) and (min-width: 641px) {
+    .content-title-img {
+        width: 100vw;
+        height: auto;
+        overflow: hidden;
+    }
+
+    .content-title-img {
+        width: 113%;
+    }
+}
+
+/* 手機板 */
+@media (max-width:640px) {
+    .content-title-img {
+        width: 100vw;
+        height: auto;
+        overflow: hidden;
+    }
+
+    .content-title-img {
+        width: 113%;
+    }
+
+    .article-text {
+        width: 80vw;
+        height: auto;
+    }
+
+    .article-text img {
+        width: 80vw;
+        height: auto;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/*--------------- Page-4 | Article-Content 找咖啡 文章 內容---------------*/
+#map-page {
+    height: 80vh;
+}
+
+#map-page p {
+    cursor: default;
+}
+
+.map-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 4vh 0;
+}
+
+.map-page .title {
+    font-size: 1rem;
+}
+
+#map-page-map {
+    height: 85vh;
+    width: 100vw;
+}
+
+.coffee-map-data {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.store {
+    display: flex;
+    justify-content: space-evenly;
+    line-height: 2.2rem;
+    margin-bottom: 50px;
+}
+
+.coffee-map-data-all p {
+    text-align: center;
+}
+
+/* 平板 */
+@media (max-width: 1024px) and (min-width: 641px) {
+    .store {
+        display: block;
+        justify-content: center;
+        align-items: center;
+        line-height: 2.2rem;
+    }
+
+    .coffee-map-data-all {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/* 手機板 */
+@media (max-width:640px) {
+    .store {
+        display: block;
+        justify-content: center;
+        align-items: center;
+        line-height: 2.2rem;
+    }
+
+    .coffee-map-data-all {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+
+
+
+
+
+
+/*--------------- Page-5 | Product 咖啡豆產品總覽---------------*/
+#quantity {
+    width: 2vw;
+    height: 22px;
+    margin: .7rem;
+}
+
+.product-content-all {
+    width: 66.32vw;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0px auto;
+    margin-bottom: 100px;
+}
+
+.product-content {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* text-align: center; */
+    margin: 0px 15px;
+}
+
+.product-content>div {
+    margin-bottom: 10px;
+}
+
+.product-content-title {
+    margin: 20px 0 5px 0;
+}
+
+.product-content img {
+    /* margin-bottom: .3rem; */
+}
+
+.counter {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.counter-btn {
+    width: 1.4rem;
+    height: 1.4rem;
+    font-size: larger;
+    align-items: center;
+    justify-content: center;
+    padding-left: 7px;
+
+}
+
+.counter label {
+    margin-right: 1px;
+}
+
+.counter img {
+    cursor: pointer;
+}
+
+.price {
+    position: absolute;
+    font-size: 1.3rem;
+    margin-top: .7rem;
+}
+
+.page-product-all {
+    width: 70vw;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    padding: 3rem 0;
+    justify-content: center;
+}
+
+.page-product-all img {
+    padding-right: 2vw;
+}
+
+.page-product-title-1 {
+    padding-right: 1rem;
+}
+
+.page-product-title-1 img {
+    width: 15vw;
+}
+
+.page-product-title-2 {
+    width: 45vw;
+    margin-top: 1rem;
+    line-height: 1.5rem;
+}
+
+.page-product-title-2 img {
+    width: 100%;
+}
+
+.page-product-title-2 p {
+    margin-bottom: .3rem;
+}
+
+.product-content a:hover {
+    color: #111111;
+}
+
+/* RWD斷點
+/* 電腦 */
+@media (min-width: 1025px) {}
+
+/* 平板 */
+@media (max-width: 1024px) and (min-width: 641px) {
+    #quantity {
+        width: 4vw;
+        height: 22px;
+        margin-right: .5rem;
+    }
+
+    .product-content-all {
+        width: 83.32vw;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0px auto;
+        margin-bottom: 100px;
+    }
+
+    .page-product-all {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .page-product-all img {
+        width: 35vw;
+    }
+
+    .page-product-title-1 p {
+        margin-top: 1rem;
+    }
+
+    .page-product-title-2 img {
+        width: 45vw;
+        height: auto;
+        margin-bottom: 2rem;
+    }
+
+    .page-product-title-2 {
+        width: 45vw;
+        margin-top: 1rem;
+        line-height: 1.5rem;
+    }
+}
+
+/* 手機板 */
+@media (max-width:640px) {
+    #quantity {
+        width: 9vw;
+        height: 4vh !important;
+        margin-right: .5rem;
+    }
+
+    .price {
+        position: absolute;
+        font-size: 1.3rem;
+        margin-top: .9rem;
+    }
+
+    .page-product-all {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .page-product-all img {
+        width: 70vw;
+    }
+
+    .page-product-title-2 {
+        width: 70vw;
+        margin-top: 1rem;
+        line-height: 1.5rem;
+    }
+
+    .page-product-title-2 img {
+        margin-bottom: 2rem;
+    }
+
+    .page-product-title-1 img {
+        width: 50vw;
+    }
+
+    .product-content-all {
+        width: 83.32vw;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0px auto;
+        margin-bottom: 100px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/*--------------- Page-6 | Product 咖啡豆產品簡介---------------*/
+.product-introduction-all {
+    display: flex;
+    width: 100vw;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.product-introduction {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.product-introduction-1-title {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.product-introduction li {
+    list-style-type: disc;
+    margin-left: 5%;
+    margin-top: 3%;
+
+}
+
+.product-introduction-photo {
+    width: 30vw;
+}
+
+
+.product-introduction-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 40%;
+    height: 100%;
+}
+
+.product-introduction-2 {
+    width: 60vw;
+    margin: 0 auto;
+    padding: 5vh 0;
+}
+
+.product-introduction-2 p {
+    line-height: 1.4;
+}
+
+.product-introduction-2 img {
+    width: 60vw;
+    height: auto;
+    margin: 4rem 0 6rem 0;
+}
+
+.product-introduction-price {
+    align-self: flex-end;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.introduction-counter {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* 平板 */
+@media (max-width: 1024px) and (min-width: 641px) {
+    .product-introduction {
+        width: 85%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .product-introduction-photo {
+        width: 35vw;
+    }
+}
+
+
+/* 手機板 */
+@media (max-width:640px) {
+    .product-introduction {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-introduction-photo {
+        width: 80vw;
+    }
+
+    .product-introduction-1 {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 80%;
+        height: 100%;
+    }
+
+    .product-introduction-2 {
+        width: 80vw;
+        margin: 0 auto;
+    }
+
+    .product-introduction-2 img {
+        width: 80vw;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*--------------- Page-7 | Checkout 購物車清單 完成訂購頁面 ---------------*/
+.form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* margin: 10vh 0 10vh 0; */
+    width: 100vw;
+    height: auto;
+    min-height: 100vh;
+}
+
+/* RWD斷點
+/* 電腦 */
+@media (min-width: 1025px) {}
+
+/* 平板 */
+@media (max-width: 1024px) and (min-width: 641px) {
+    .form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: auto;
+        min-height: 100vh;
+    }
+}
+
+/* 手機板 */
+@media (max-width:640px) {
+    .form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: auto;
+        min-height: 100vh;
+    }
+}
+
+.form>div {
+    flex: 1;
+}
+
+/* .shopping-cart-page li {
+    display: flex;
+    margin: 20px 0;
+    justify-content: flex-start;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+} */
+.shopping-cart-page ul {
+    list-style: none;
+    /* 移除預設的列表樣式 */
+    padding: 0;
+}
+
+.shopping-cart-page li {
+    margin: 50px 0 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.shopping-cart-page li div {
+    flex: 1;
+    /* 每個 div 占據相同的寬度 */
+    margin: 0 10px;
+    /* 設置 div 之間的固定間距 */
+}
+
+.shopping-cart-page li div:first-child {
+    margin-left: 0;
+    /* 第一個 div 左邊不需要間距 */
+    margin-right: 0;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.shopping-cart-page li div:last-child {
+    margin-right: 0;
+    /* 最後一個 div 右邊不需要間距 */
+    display: flex;
+    justify-content: flex-end;
+}
+
+.shopping-cart-page li img {
+    height: 100px;
+    /* 設置圖片高度 */
+    width: auto;
+    /* 確保圖片等比例縮放 */
+}
+
+.shopping-cart-page li button {
+    background: none;
+    /* 移除按鈕背景 */
+    border: none;
+    /* 移除按鈕邊框 */
+    cursor: pointer;
+    /* 設置按鈕點擊效果 */
+}
+
+
+.shopping-cart-page li img {
+    width: 85px;
+    height: auto;
+}
+
+.shopping-cart-page button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.btn-form span {
+    font-size: 1rem;
+    font-weight: 550;
+    letter-spacing: 2px;
+    padding-left: 5px;
+    cursor: pointer;
+}
+
+.btn-form:hover {
+    animation: rotate 0.7s ease-in-out both;
+    color: var(--main);
+}
+
+.btn-form:hover span {
+    animation: storm 0.7s ease-in-out both;
+    animation-delay: 0.06s;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(3deg);
+    }
+
+    50% {
+        transform: rotate(-3deg);
+    }
+
+    75% {
+        transform: rotate(1deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes storm {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    25% {
+        transform: translate3d(4px, 0, 0);
+    }
+
+    50% {
+        transform: translate3d(-3px, 0, 0);
+    }
+
+    75% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.form-data {
+    display: flex;
+    /* flex-direction: column; */
+    margin-top: 50px;
+
+}
+
+.form-data div:not(.totals-checkout div) {
+    margin-bottom: 5vh;
+}
+
+.form-data select {
+    width: 204px;
+}
+
+.form-data input,
+select {
+    background-color: transparent;
+    border: 1px solid #111111;
+}
+
+.totals-checkout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.shopping-cart-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.shopping-cart-page h2 {
+    color: var(--main);
+    font-weight: 600;
+    font-size: larger;
+    margin-bottom: 15px;
+}
+
+.shopping-cart-page ul {
+    display: block;
+    width: 70%;
+}
+
+.shopping-cart-page ul button img {
+    width: 1.3vw;
+    height: auto;
+}
+
+/* 對SVG圖片應用新顏色 */
+.my-edit-icon:hover {
+    fill: red;
+}
+
+/* 對img元素應用新顏色 */
+.shopping-cart-page ul button img:hover {
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(144deg) brightness(100%) contrast(100%);
+}
+
+
+.shopping-cart-page ul {
+    display: block;
+}
+
+.address input {
+    width: 503px;
+}
+
+.totalPrice p {
+    text-align: end;
+    margin-top: 25px;
+}
+
+/* RWD斷點 */
+/* 電腦 */
+@media (min-width: 1025px) {
+    .zipcode {
+        margin-left: 15px;
+    }
+}
+
+/* 平板 */
+@media (max-width: 1024px) and (min-width: 641px) {
+    .shopping-cart-page {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100vw;
+        height: auto;
+    }
+
+    .zipcode {
+        margin-left: 15px;
+    }
+}
+
+/* 手機板 */
+@media (max-width:640px) {
+    .form-data {
+        display: block;
+        width: 85vw;
+    }
+
+    .address input {
+        width: 80vw;
+    }
+
+    .shopping-cart-page ul {
+        width: 90%;
+    }
+
+    .shopping-cart-page ul button img {
+        width: 5.3vw;
+        height: auto;
+    }
+
+    .shopping-cart-page li img {
+        width: 75px;
+        height: auto;
+    }
+
+    .totalPrice p {
+        text-align: end;
+        margin: 25px 0 50px 0;
+    }
+
+    .zipcode {
+        margin-left: 9px;
+    }
+}
+
+
+
+
+
+
+
+
+/*--------------- Page-8 | Checkout 購物車清單 暫無購物項目 ---------------*/
+.wavebox {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 波浪圖 */
+.wavecontent img {
+    display: block;
+    margin: 0 auto;
+}
+
+/* 通知文字 */
+.wavecontent p {
+    text-align: center;
+    margin: 48px auto;
+}
+
+/* 訂購完成 */
+.success p {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.success small {
+    font-size: 0.75rem;
+}
+
+
+
+
+
+
+
+
+
+/*--------------- 連繫我們 ---------------*/
+#contact {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+
+#contact textarea {
+    position: relative;
+    width: 300px;
+    height: 150px;
+}
+
+.form-group-textarea {
+    display: flex;
+}
+
+#contact input:not(.form-checkbox input),
+textarea {
+    background-color: transparent;
+    border: 1px solid #111111;
+}
+
+.btn-form {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    justify-content: flex-end;
+    font-size: 1rem;
+    color: #111111;
+}
+
+#contact label:not(.form-checkbox label) {
+    width: 10vw;
+    text-align: left;
+}
+
+.form-checkbox {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 50px;
+    align-items: center;
+}
+
+.form-group,
+.form-group-textarea {
+    margin: 15px 0;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #666;
+    /* 焦點時的邊框顏色 */
+}
+
+.form-group,
+.form-group-textarea label {
+    align-self: flex-start;
+}
+
+
+/* RWD斷點 */
+/* 電腦 */
+@media (min-width: 1025px) {
+    #form-contact textarea {
+        width: 30vw;
+        height: 20vh;
+    }
+}
+
+/* 平板 */
+@media (max-width: 1024px) and (min-width: 641px) {
+    #form-contact textarea {
+        width: 30vw;
+        height: 20vh;
+    }
+}
+
+/* 手機板 */
+@media (max-width:640px) {
+    #form-contact textarea {
+        width: 30vw;
+        height: 20vh;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*--------------- 完成訂購畫面 ---------------*/
+.shoppingComplete section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* wave+通知文字 */
+/* 垂直置中波浪+通知 */
+.wavebox {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    /* 水平置中 */
+    justify-content: center;
+    /* 垂直置中 */
+    align-items: center;
+}
+
+/* 波浪圖 */
+.wavecontent img {
+    display: block;
+    margin: 0 auto;
+}
+
+/* 通知文字 */
+.wavecontent p {
+    text-align: center;
+    margin: 48px auto;
+}
+
+/* 訂購完成 */
+.success p {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.success small {
+    font-size: 0.75rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*--------------- 特殊尺寸1024px 小電腦 ---------------*/
+
+/* 小電腦 */
+/* @media (min-width: 1024px) and (max-width: 1024px) {
+    section {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #fair-trade-text::after {
+        font-size: 1.2rem;
+        content: "針對弱勢的生產者，發展出分別針對屬於自耕農的小農組織和擁有受僱者的農場等兩種公平貿易認證的標準。\A\A針對小農組織的公平貿易標準，其要求包括民主決策，確保生產者對於公平貿易組織所投入的輔導金之運用有發言的權利。";
+    }
+
+    .scrolldownIframe {
+        position: absolute;
+        left: 10px;
+        width: 50px;
+        border: none;
+        overflow: hidden;
+        top: 100%;
+    }
+
+    .header {
+        height: 100vh;
+        width: 100%;
+        margin-bottom: 150px;
+    }
+
+    .search-bg img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+        transform: translate(-50%, -50%);
+    }
+
+    #search {
+        width: 100%;
+        height: 65vh;
+    }
+
+    .search-item {
+        margin: 0 15px;
+        text-align: center;
+        position: relative;
+    }
+
+    .search-item-bg {
+        width: 40vh;
+        height: 40vh;
+        animation: 10s ease-in-out 0s infinite alternate none running morph, 20s linear 0s infinite alternate none running change;
+        overflow: hidden;
+        position: relative;
+    }
+
+    #article {
+        width: 100%;
+        height: 90vh;
+    }
+
+    #product {
+        padding-top: 120px;
+    }
+} */
