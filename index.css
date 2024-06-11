@@ -1393,7 +1393,7 @@ br::after {
     position: absolute;
     width: 40px;
     height: 40px;
-    background: url('./icon/@1x/CoffeeBean.main.svg') no-repeat center center;
+    background: url('../icon/@1x/CoffeeBean.main.svg') no-repeat center center;
     background-size: contain;
     pointer-events: none;
     z-index: 1000;
